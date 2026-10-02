@@ -1,0 +1,47 @@
+name: Verify OneLogic
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'formal/**'
+      - 'solver/**'
+      - 'tests/**'
+      - '.github/workflows/verify.yml'
+  pull_request:
+    paths:
+      - 'formal/**'
+      - 'solver/**'
+      - 'tests/**'
+      - '.github/workflows/verify.yml'
+  workflow_dispatch:
+
+jobs:
+  python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s tests -v
+      - run: python -m unittest solver.test_solver -v
+      - run: PYTHONPATH=formal python -m one_logic.falsifier
+
+  lean:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: leanprover/lean-action@v1
+        with:
+          lake-package-directory: formal/lean
+          auto-config: false
+          build: true
+          test: false
+          lint: false
+          use-mathlib-cache: false
+          leanchecker: true
+          leanchecker-args: OneLogic
+          nanoda: false
+          axiom-audit: true
+          axiom-audit-root: OneLogic
