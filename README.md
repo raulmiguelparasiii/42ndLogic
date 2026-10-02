@@ -1,6 +1,6 @@
 # 42ndLogic
 
-42ndLogic is the foundation repository for **OneLogic**, a proposed reality-tracking architecture for inference, inquiry, correction, and machine reasoning.
+42ndLogic is the public foundation repository for **OneLogic**, a proposed reality-tracking architecture for inference, inquiry, correction, and machine reasoning.
 
 The core idea is deliberately small:
 
@@ -8,9 +8,9 @@ The core idea is deliberately small:
 
 This repository contains:
 
-- `paper/` — the formal paper in LaTeX.
+- `paper/` — the formal paper in Markdown and LaTeX.
 - `formal/` — machine-checkable theorem statements and bounded countermodel attacks.
-- `solver/` — the OneLogic Solver, an agent architecture that treats models as candidate generators and external tests/tools as reality-contact.
+- `solver/` — a small provider-agnostic demonstrator of the OneLogic reasoning loop.
 - `docs/` — a minimal public site suitable for GitHub Pages.
 
 ## Status
@@ -35,17 +35,19 @@ U*(K,o) = {m' : there exists m ∈ K with (m,o,m') ∈ T}.
 
 The exact state is simultaneously sound and sharp relative to the represented channel.
 
-## OneLogic Solver
+## Public solver demonstrator
 
-The solver is intended to make the architecture economically and scientifically testable. It separates:
+The public solver demonstrates five architectural operations:
 
-1. candidate generation,
-2. live-alternative tracking,
-3. discriminating reality-contact,
-4. exact update,
-5. correction/model expansion.
+1. generate candidate structured possibilities;
+2. track the still-live alternatives;
+3. choose a discriminating inquiry;
+4. update against the actual observed outcome;
+5. expand the representation rather than manufacture an answer when every candidate fails.
 
-An LLM can propose possibilities, but the LLM is not the truth authority.
+A generator may be an LLM, symbolic engine, search process, program synthesizer, or human. The generator proposes possibilities; it does not certify them.
+
+The public repository intentionally does not contain production execution strategy or operational automation.
 
 ## License
 
