@@ -37,7 +37,7 @@ def _request(url: str, token: str, *, method: str = "GET", payload: dict | None 
 
 def action_marker(key: str) -> str:
     safe = urllib.parse.quote(key, safe="")
-    return f"{MARKER_PREFIX}{safe} -->"
+    return f"{MARKER_PREFIX}{safe}-->"
 
 
 def ensure_action_required_issue(
