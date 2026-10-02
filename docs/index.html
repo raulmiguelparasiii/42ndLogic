@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>42ndLogic · OneLogic</title>
+  <meta name="description" content="OneLogic: a reality-tracking architecture for inference, inquiry, correction, and machine reasoning.">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main>
+    <p class="eyebrow">42ndLogic</p>
+    <h1>OneLogic</h1>
+    <p class="lead">A compact reality-tracking architecture for inference, inquiry, correction, and machine reasoning.</p>
+
+    <section class="core">
+      <p>Preserve every possibility reality has not defeated.</p>
+      <p>Eliminate exactly what warranted reality-contact defeats.</p>
+      <p>Assert only what the survivors force.</p>
+      <p>If reality no longer fits the representation, revise the representation.</p>
+    </section>
+
+    <section>
+      <h2>The semantic spine</h2>
+      <p>Let <span class="math">𝕄</span> be the represented space of structured possibilities, <span class="math">1 ∈ 𝕄</span> actuality, and <span class="math">K ⊆ 𝕄</span> the live possibilities compatible with present warrant.</p>
+      <div class="formula">K ⊨ (q = v) iff K ≠ ∅ and ∀m ∈ K, q(m) = v</div>
+      <p>Inquiry is modeled by a transition relation. After an observed outcome, the sharp update retains exactly the modeled successors compatible with that outcome.</p>
+      <div class="formula">U*(K,o) = {m′ : ∃m ∈ K, (m,o,m′) ∈ T}</div>
+    </section>
+
+    <section>
+      <h2>Objective deviation</h2>
+      <p>Relative to an independently established ideal state <span class="math">I</span>, a reasoning state <span class="math">A</span> can fail in two directions:</p>
+      <div class="formula">unsupported exclusion = I \ A</div>
+      <div class="formula">unsupported retention = A \ I</div>
+      <p>This gives a content-neutral way to compare reasoning without reducing every error to a named fallacy.</p>
+    </section>
+
+    <section>
+      <h2>OneLogic Solver</h2>
+      <p>The solver is a non-transformer reasoning controller. Models may generate candidate hypotheses, but tools and observations determine which candidates remain live. If no live candidate survives, the controller requests model expansion instead of forcing an answer.</p>
+      <div class="flow">generate → represent → discriminate → observe → update → correct → repeat</div>
+    </section>
+
+    <section>
+      <h2>Status</h2>
+      <p>The repository includes bounded adversarial model search and general theorem statements checked in Lean. The architecture remains falsifiable: a legitimate reality-tracking operation that cannot be represented by the core is grounds to reopen it.</p>
+    </section>
+
+    <nav>
+      <a href="https://github.com/raulmiguelparasiii/42ndLogic">Repository</a>
+      <a href="https://github.com/raulmiguelparasiii/42ndLogic/tree/main/paper">Paper source</a>
+      <a href="https://github.com/raulmiguelparasiii/42ndLogic/tree/main/solver">Solver</a>
+      <a href="https://github.com/raulmiguelparasiii/42ndLogic/tree/main/formal">Formal lab</a>
+    </nav>
+  </main>
+</body>
+</html>
