@@ -8,8 +8,7 @@ Do not commit or paste any of the following into this repository:
 - identity documents
 - passwords
 - API keys or tokens
+- seed phrases or wallet private keys
 - private addresses, phone numbers, or personal contact details
 
-Payment and identity verification should be completed directly with the relevant bounty, competition, payment, or banking provider through its official interface.
-
-Runtime secrets for future model/tool providers should be stored in GitHub Actions secrets, a local secret manager, or environment variables and should never be hard-coded.
+Runtime secrets for any external model, tool, experiment, or service should remain outside the public repository and be supplied through an appropriate secret manager or environment.
