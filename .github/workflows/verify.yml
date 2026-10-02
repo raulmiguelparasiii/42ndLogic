@@ -28,6 +28,8 @@ jobs:
       - run: python -m unittest solver.test_solver -v
       - run: python -m unittest solver.coding.test_coding -v
       - run: python -m unittest solver.revenue.test_intake -v
+      - run: python -m unittest solver.platforms.test_policy -v
+      - run: python -m unittest solver.notifications.test_notifications -v
       - run: PYTHONPATH=formal python -m one_logic.falsifier
 
   lean:
