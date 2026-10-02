@@ -27,6 +27,7 @@ jobs:
       - run: python -m unittest discover -s tests -v
       - run: python -m unittest solver.test_solver -v
       - run: python -m unittest solver.coding.test_coding -v
+      - run: python -m unittest solver.revenue.test_intake -v
       - run: PYTHONPATH=formal python -m one_logic.falsifier
 
   lean:
