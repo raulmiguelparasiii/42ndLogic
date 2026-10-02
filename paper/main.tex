@@ -1,0 +1,74 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\title{\textbf{OneLogic}\\A Reality-Tracking Architecture for Inference, Inquiry, and Correction}
+\author{42nd Logic Project}
+\date{\today}
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+\newtheorem{principle}{Principle}
+\begin{document}
+\maketitle
+\begin{abstract}
+OneLogic is a proposed compact architecture for reasoning under one actual reality. It separates actuality from a finite reasoner's representation, treats strict categorical inference as invariance across live possibilities, treats inquiry as reality-contact that removes exactly the possibilities incompatible with an observed outcome, and requires representational revision when actuality falls outside the current model class. The architecture also yields an objective two-direction account of reasoning deviation: unsupported exclusion and unsupported retention.
+\end{abstract}
+
+\section{Semantic basis}
+Let $\mathfrak M$ be a represented class of complete structured possibilities and let $\mathbf 1\in\mathfrak M$ denote actuality whenever the present representation is adequate. A finite reasoner has explicit represented material $E$, inducing a live state
+\[K(E)\subseteq\mathfrak M.\]
+For a sound represented state, $\mathbf 1\in K(E)$.
+A legitimate query may be partial and multi-valued, $q:\mathfrak M\rightharpoonup V_q$. Undefinedness is not identified with falsity.
+
+\section{Strict categorical consequence}
+\begin{definition}
+For nonempty $K$,
+\[K\models(q=v)\iff \forall M\in K,\ q(M)=v.\]
+\end{definition}
+\begin{theorem}[Greatest sound categorical consequence]
+Any categorical rule sound over every live possibility in nonempty $K$ is contained in the invariant consequence relation.
+\end{theorem}
+\begin{proof}
+Universal soundness requires each asserted value to hold in every live possibility. This is exactly the defining condition above.
+\end{proof}
+
+\section{Inquiry and sharp update}
+Represent inquiry or intervention by $T\subseteq\mathfrak M\times O\times\mathfrak M$. After observed outcome $o$, define
+\[U^\star(K,o)=\{M':\exists M\in K,\ (M,o,M')\in T\}.\]
+\begin{theorem}[Sharp sound update]
+Every posterior sound for the modeled channel contains $U^\star(K,o)$. Hence $U^\star$ is the unique smallest sound posterior under set inclusion.
+\end{theorem}
+\begin{principle}
+Preserve every possibility reality has not defeated. Eliminate exactly what warranted reality-contact defeats. Assert only what the survivors force.
+\end{principle}
+
+\section{Correction and open ontology}
+If $\mathbf 1\notin K$, no subset of $K$ can restore actuality. If $\mathbf 1\notin\mathfrak M$, no live state confined to the current model class can restore actuality. Correction may therefore require reopening possibilities or expanding the representation.
+
+\section{Representation and material distinction}
+For an admitted query family $\mathcal Q$, define $M\sim_{\mathcal Q}N$ when every admitted query has the same definedness and value on $M$ and $N$. A representation that merges possibilities from different equivalence classes loses at least one admitted distinction.
+
+\section{Objective deviation}
+For independently established ideal $I$ and candidate state $A$, define
+\[E^-(I,A)=I\setminus A,\qquad E^+(I,A)=A\setminus I.\]
+$E^-$ is unsupported exclusion and $E^+$ is unsupported retention. The exact state has zero deviation. A state weakly dominates another when both of its deviation sets are subsets of the other's; dominance is strict when at least one inclusion is strict.
+
+\section{Named fallacies as surface patterns}
+The architecture does not identify fallacies by wording. A premise-to-conclusion bridge is valid only when the premise is live-realizable and every live realization of the premise carries the conclusion. One live counterexample defeats the bridge. Thus personal criticism or insult is not automatically an ad hominem fallacy; relevance depends on the claimed bridge.
+
+\section{The OneLogic Solver}
+The solver operationalizes the architecture as a controller:
+\[\text{generate}\to\text{represent}\to\text{infer}\to\text{discriminate}\to\text{observe}\to\text{update}\to\text{correct}\to\text{repeat}.\]
+A language model may generate hypotheses, code patches, explanations, experiment proposals, or mathematical transformations, but it is not the truth authority. External tests, compilers, proof checkers, repository behavior, datasets, instruments, simulations, or observations may supply reality-contact.
+
+\section{Machine use}
+OneLogic can serve as an epistemic control layer around existing machine intelligence. It does not replace perception, planning, motor control, representation learning, probability models, or domain knowledge. Potential applications include coding agents, autonomous science, research agents, model evaluation, machine-learning supervision, and multi-agent information integration.
+
+\section{Falsification criteria}
+The core should be reopened if a legitimate reality-tracking operation cannot be represented without violating the architecture. Serious challenges include a categorical truth-preserving inference that exceeds invariance without new warranted information, a sound and strictly sharper update than $U^\star$ for the same correctly represented channel and outcome, or a required correction that cannot be represented by reopening or replacing the live/model space.
+
+\section{Limits and status}
+Formal verification proves theorems from formal assumptions; it does not by itself prove that those assumptions exhaust every aspect of actual reality. Bounded computational search can find counterexamples within its search domain but does not replace general proof. Historical novelty and comparison with existing traditions require a separate scholarship pass and are not assumed here.
+
+\end{document}
