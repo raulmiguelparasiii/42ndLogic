@@ -5,6 +5,10 @@ discriminating inquiries, receives actual outcomes from an oracle/reality-contac
 adapter, and performs exact compatibility updates.
 
 External models may implement CandidateGenerator. They are proposal mechanisms only.
+
+The mature-judgment extension keeps strict answer settlement unchanged while allowing
+a separate provisional ordering over live candidates. A provisionally favored answer
+is exposed as such and is never substituted for a forced answer.
 """
 from __future__ import annotations
 
@@ -21,6 +25,7 @@ class Candidate:
     answer: Hashable
     predictions: Mapping[str, Hashable]
     payload: object | None = None
+    support: float = 0.0
 
     def predict(self, inquiry_id: str):
         return self.predictions.get(inquiry_id, UNKNOWN)
@@ -53,6 +58,7 @@ class SolveResult:
     answer: Hashable | None
     live_candidate_ids: tuple[str, ...]
     trace: Trace
+    provisional_answer: Hashable | None = None
 
 
 class CandidateGenerator(Protocol):
@@ -92,6 +98,24 @@ def forced_answer(live: Sequence[Candidate]):
     if not live:
         return UNKNOWN
     values = {candidate.answer for candidate in live}
+    if len(values) == 1:
+        return next(iter(values))
+    return UNKNOWN
+
+
+def provisional_answer(live: Sequence[Candidate]):
+    """Return a support-maximal answer without treating it as settled.
+
+    This bounded demonstrator uses a numeric support field to instantiate the more
+    general support preorder in formal/one_logic/core.py. Support does not remove
+    candidates. If all live candidates already agree, the result belongs to the
+    strict forced layer instead and no separate provisional answer is returned.
+    """
+    if not live or forced_answer(live) is not UNKNOWN:
+        return UNKNOWN
+    best = max(candidate.support for candidate in live)
+    top = [candidate for candidate in live if candidate.support == best]
+    values = {candidate.answer for candidate in top}
     if len(values) == 1:
         return next(iter(values))
     return UNKNOWN
@@ -179,11 +203,13 @@ class OneLogicSolver:
 
             inquiry = choose_inquiry(live, self.inquiries, used)
             if inquiry is None:
+                provisional = provisional_answer(live)
                 return SolveResult(
                     "non_identifiable",
                     None,
                     tuple(c.id for c in live),
                     trace,
+                    None if provisional is UNKNOWN else provisional,
                 )
 
             used.add(inquiry.id)
@@ -193,7 +219,14 @@ class OneLogicSolver:
             live = exact_update(live, inquiry, outcome)
             trace.live_history.append(tuple(c.id for c in live))
 
-        return SolveResult("budget_exhausted", None, tuple(c.id for c in live), trace)
+        provisional = provisional_answer(live)
+        return SolveResult(
+            "budget_exhausted",
+            None,
+            tuple(c.id for c in live),
+            trace,
+            None if provisional is UNKNOWN else provisional,
+        )
 
 
 class StaticGenerator:
