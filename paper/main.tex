@@ -3,7 +3,7 @@
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage[hidelinks]{hyperref}
 \usepackage{enumitem}
-\title{\textbf{OneLogic}\\A Reality-Tracking Architecture for Inference, Inquiry, and Correction}
+\title{\textbf{OneLogic}\\A Reality-Tracking Logic of Mature Judgment}
 \author{42nd Logic Project}
 \date{\today}
 \newtheorem{theorem}{Theorem}
@@ -11,64 +11,187 @@
 \newtheorem{principle}{Principle}
 \begin{document}
 \maketitle
+
 \begin{abstract}
-OneLogic is a proposed compact architecture for reasoning under one actual reality. It separates actuality from a finite reasoner's representation, treats strict categorical inference as invariance across live possibilities, treats inquiry as reality-contact that removes exactly the possibilities incompatible with an observed outcome, and requires representational revision when actuality falls outside the current model class. The architecture also yields an objective two-direction account of reasoning deviation: unsupported exclusion and unsupported retention.
+OneLogic is a reality-tracking logic for reasoning under one actual world and finite, corrigible representation. Its strict core permits categorical assertion only when every live represented possibility agrees, updates against reality-contact by eliminating exactly what the observed outcome defeats, and requires representational expansion when actuality no longer fits the model class. This formulation extends the same logic into mature judgment without replacing strict truth with fuzzy truth and without adding separate empathy, testimony, social, moral, or action modules. A single judgment state carries live possibilities, causal-informational provenance, defeasible comparative support, materially required distinctions, available inquiry, feasible response, and world transition. The Philosopher's Stone constrains material relevance through informational grounding, contextual interpretation, real-world constraint, affected welfare, consequence, and correction. The useful structure of the earlier Interpersonal Epistemic Logic is thereby absorbed as consequences of one smaller reality-relative calculus.
 \end{abstract}
 
-\section{Semantic basis}
-Let $\mathfrak M$ be a represented class of complete structured possibilities and let $\mathbf 1\in\mathfrak M$ denote actuality whenever the present representation is adequate. A finite reasoner has explicit represented material $E$, inducing a live state
-\[K(E)\subseteq\mathfrak M.\]
-For a sound represented state, $\mathbf 1\in K(E)$.
-A legitimate query may be partial and multi-valued, $q:\mathfrak M\rightharpoonup V_q$. Undefinedness is not identified with falsity.
+\section{One reality and one judgment state}
+Let $\Omega_t$ be the represented class of complete structured possibilities at time $t$, and let $\omega_t$ denote actuality whenever the representation is adequate. The live state is
+\[
+K_t\subseteq\Omega_t,
+\]
+with $\omega_t\in K_t$ for a sound represented state.
+
+Relative to referent $r$, define
+\[
+J_t(r)=\langle\Omega_t,K_t,G_t,\succeq_t,Q_{\mathrm{mat}}(r),I_t,A_t,T_t\rangle.
+\]
+Here $G_t$ is causal-informational provenance, $\succeq_t$ is defeasible comparative support, $Q_{\mathrm{mat}}(r)$ is the materially required query family, $I_t$ is available inquiry, $A_t$ is feasible response, and $T_t$ is world transition. These are fields of one state rather than independent truth authorities.
+
+A query may be partial and multi-valued. Undefinedness is not falsity.
 
 \section{Strict categorical consequence}
-\begin{definition}
-For nonempty $K$,
-\[K\models(q=v)\iff \forall M\in K,\ q(M)=v.\]
+\begin{definition}[Categorical consequence]
+For nonempty $K_t$,
+\[
+K_t\models(q=v)
+\quad\Longleftrightarrow\quad
+\forall w\in K_t,\ q(w)\text{ is defined and }q(w)=v.
+\]
 \end{definition}
-\begin{theorem}[Greatest sound categorical consequence]
-Any categorical rule sound over every live possibility in nonempty $K$ is contained in the invariant consequence relation.
-\end{theorem}
-\begin{proof}
-Universal soundness requires each asserted value to hold in every live possibility. This is exactly the defining condition above.
-\end{proof}
 
-\section{Inquiry and sharp update}
-Represent inquiry or intervention by $T\subseteq\mathfrak M\times O\times\mathfrak M$. After observed outcome $o$, define
-\[U^\star(K,o)=\{M':\exists M\in K,\ (M,o,M')\in T\}.\]
-\begin{theorem}[Sharp sound update]
-Every posterior sound for the modeled channel contains $U^\star(K,o)$. Hence $U^\star$ is the unique smallest sound posterior under set inclusion.
-\end{theorem}
 \begin{principle}
-Preserve every possibility reality has not defeated. Eliminate exactly what warranted reality-contact defeats. Assert only what the survivors force.
+Preserve every possibility reality has not defeated. Eliminate exactly what warranted reality-contact defeats. Assert categorically only what the survivors force.
 \end{principle}
 
-\section{Correction and open ontology}
-If $\mathbf 1\notin K$, no subset of $K$ can restore actuality. If $\mathbf 1\notin\mathfrak M$, no live state confined to the current model class can restore actuality. Correction may therefore require reopening possibilities or expanding the representation.
+No source weight, probability, popularity, usefulness, emotional intensity, or institutional status replaces categorical invariance.
 
-\section{Representation and material distinction}
-For an admitted query family $\mathcal Q$, define $M\sim_{\mathcal Q}N$ when every admitted query has the same definedness and value on $M$ and $N$. A representation that merges possibilities from different equivalence classes loses at least one admitted distinction.
+\section{Sharp reality-contact update}
+Represent inquiry, observation, or intervention by
+\[
+T_t\subseteq\Omega_t\times O\times\Omega_{t+1}.
+\]
+After outcome $o$,
+\[
+U^\star(K_t,o)=\{w':\exists w\in K_t,(w,o,w')\in T_t\}.
+\]
+Every posterior sound for the represented channel contains $U^\star$. If actuality has been excluded from $K_t$, contraction alone cannot restore it. If actuality lies outside $\Omega_t$, the model class must expand or be replaced.
 
-\section{Objective deviation}
-For independently established ideal $I$ and candidate state $A$, define
-\[E^-(I,A)=I\setminus A,\qquad E^+(I,A)=A\setminus I.\]
-$E^-$ is unsupported exclusion and $E^+$ is unsupported retention. The exact state has zero deviation. A state weakly dominates another when both of its deviation sets are subsets of the other's; dominance is strict when at least one inclusion is strict.
+\section{Graded support without false settlement}
+Let $\succeq_t$ be any warranted defeasible preorder over $K_t$, and let $\mathrm{Max}_t$ be its maximal live possibilities.
 
-\section{Named fallacies as surface patterns}
-The architecture does not identify fallacies by wording. A premise-to-conclusion bridge is valid only when the premise is live-realizable and every live realization of the premise carries the conclusion. One live counterexample defeats the bridge. Thus personal criticism or insult is not automatically an ad hominem fallacy; relevance depends on the claimed bridge.
+\begin{definition}[Forced judgment]
+\[
+\mathrm{Forced}(q=v)\Longleftrightarrow \forall w\in K_t,\ q(w)=v.
+\]
+\end{definition}
 
-\section{The OneLogic Solver}
-The solver operationalizes the architecture as a controller:
-\[\text{generate}\to\text{represent}\to\text{infer}\to\text{discriminate}\to\text{observe}\to\text{update}\to\text{correct}\to\text{repeat}.\]
-A language model may generate hypotheses, code patches, explanations, experiment proposals, or mathematical transformations, but it is not the truth authority. External tests, compilers, proof checkers, repository behavior, datasets, instruments, simulations, or observations may supply reality-contact.
+\begin{definition}[Provisionally favored judgment]
+\[
+\mathrm{Favored}(q=v)\Longleftrightarrow
+\neg\mathrm{Forced}(q=v)\ \wedge\
+\forall w\in\mathrm{Max}_t,\ q(w)=v.
+\]
+\end{definition}
 
-\section{Machine use}
-OneLogic can serve as an epistemic control layer around existing machine intelligence. It does not replace perception, planning, motor control, representation learning, probability models, or domain knowledge. Potential applications include coding agents, autonomous science, research agents, model evaluation, machine-learning supervision, and multi-agent information integration.
+Thus a best-supported interpretation may guide attention or inquiry while remaining categorically unsettled. Changing $\succeq_t$ while holding $K_t$ and query semantics fixed cannot change strict categorical consequence.
 
-\section{Falsification criteria}
-The core should be reopened if a legitimate reality-tracking operation cannot be represented without violating the architecture. Serious challenges include a categorical truth-preserving inference that exceeds invariance without new warranted information, a sound and strictly sharper update than $U^\star$ for the same correctly represented channel and outcome, or a required correction that cannot be represented by reopening or replacing the live/model space.
+\section{Material relevance and the Philosopher's Stone}
+The original query-relative formulation allowed a hidden failure: a reasoner could preserve every admitted query after omitting a materially governing question. Mature OneLogic therefore uses $Q_{\mathrm{mat}}(r)$.
 
-\section{Limits and status}
-Formal verification proves theorems from formal assumptions; it does not by itself prove that those assumptions exhaust every aspect of actual reality. Bounded computational search can find counterexamples within its search domain but does not replace general proof. Historical novelty and comparison with existing traditions require a separate scholarship pass and are not assumed here.
+A distinction belongs to $Q_{\mathrm{mat}}(r)$ when erasing it can change mature judgment through informational grounding, contextual interpretation, real-world constraint, affected welfare, consequence, or correction. Equivalently, $Q_{\mathrm{mat}}(r)$ may be treated as the least fixed point obtained by repeatedly adding any distinction whose variation can alter those relations or the mature response frontier.
+
+Let $h:\Omega_t\to H$ be a proposed compression. Material adequacy requires
+\[
+h(w_1)=h(w_2)\Longrightarrow
+q(w_1)=q(w_2)
+\quad\forall q\in Q_{\mathrm{mat}}(r),
+\]
+including definedness.
+
+\subsection{Affected welfare as logical empathy}
+If two live possibilities differ in the condition of an affected subject and that difference can alter mature judgment, the corresponding welfare distinction belongs to $Q_{\mathrm{mat}}(r)$. An adequate representation may not erase it. Empathy is therefore operationalized as preservation and governing use of materially affected welfare, integrated with constraint, information, context, consequence, and correction rather than implemented as a scalar reward or emotional simulation module.
+
+\section{Encoding robustness, provenance, and source continuity}
+Let $\mathrm{Enc}_t(r)$ be the materially adequate nondominated encodings of the accessible record. Robust categorical settlement requires
+\[
+\mathrm{RobustForced}(q=v)
+\Longleftrightarrow
+\forall E\in\mathrm{Enc}_t(r),\ K_t^E\models(q=v).
+\]
+One admissible encoding containing a materially live alternative blocks robust closure.
+
+The provenance graph $G_t$ distinguishes independent causal-informational ancestry from repeated transmission. Copies, citations, reposts, or repeated reports from one ancestry do not become independent observations merely by being numerous. New observation, authentication, measurement, or a genuinely new testable transformation may add new ancestry.
+
+Source history may alter the support preorder without becoming a truth oracle. Previously demonstrated domain-relevant access, calibration, prediction, transparent uncertainty, and correction remain defeasible evidence until contradiction, domain transfer, manipulation, correction failure, decay, or another material defeater changes their force. Source standing may therefore change provisional support while leaving categorical consequence untouched.
+
+\section{One anti-collapse rule}
+Many interpersonal failures reduce to invalid identification of distinct relations. OneLogic retains the rule that a categorical premise-to-conclusion bridge fails when one live realization satisfies the premise while defeating the conclusion. Without a warranted bridge, expression is not private judgment, omission is not denial, disclosed basis is not total basis, source reliability is not claim truth, alignment is not coordination, consideration is not belief, belief is not action, precaution is not guilt, sincerity is not memory fidelity, memory fidelity is not historical truth, visible correction is not latent correction-openness, and later truth is not earlier evidential warrant.
+
+\section{Inquiry, suspension, and precaution}
+Let $U_t(r)$ be the unresolved material distinctions capable of changing judgment or response. Each inquiry $i$ has a material gain set $\mathrm{Gain}(i)\subseteq U_t(r)$ and a burden vector rather than a forced scalar utility. Inquiry $i_1$ dominates $i_2$ when it resolves a superset of the relevant uncertainty while imposing no greater represented burden in any dimension, with at least one strict improvement.
+
+The proportionate inquiry frontier contains available admissible positive-gain inquiries not dominated by another. Declining inquiry creates no evidence.
+
+When a material proposition remains open and no proportionate discriminating inquiry is available or warranted, categorical judgment remains suspended. Suspension can coexist with provisional favoring.
+
+Action and belief remain distinct projections of $J_t(r)$. A precautionary response may be warranted by consequence while the proposition motivating the precaution remains unsettled. Acting does not convert uncertainty into fact.
+
+\section{Mature response and tragic residue}
+For feasible response $a$, let $F(a,r)$ be the set of materially relevant pressures left unresolved, violated, or sacrificed.
+
+A correction-open response $a$ dominates $b$ when
+\[
+F(a,r)\subsetneq F(b,r).
+\]
+The mature response set is
+\[
+Y^\star(r)=\{a:\mathrm{CorrectionOpen}(a)\ \wedge\
+\nexists a'\,[F(a',r)\subsetneq F(a,r)]\}.
+\]
+
+If no feasible response has empty residue, OneLogic returns the correction-open nondominated frontier and preserves the remaining losses explicitly. It does not manufacture a clean scalar optimum.
+
+\section{Time, strategic agents, and recursive relevance}
+Truth is time-indexed. An action at $t$ may make $q(\omega_{t+1})$ true without proving $q(\omega_t)$ or proving that the earlier evidence warranted it. Self-fulfilling and self-defeating outcomes are causal transitions rather than retroactive evidence.
+
+Observed compliance, concession, transparency, or correction may be strategically produced. A latent policy claim is licensed only when the bridge from observed behavior survives the live strategic possibilities.
+
+Higher-order belief is represented only to the depth at which it preserves a material distinction or changes the mature response frontier. Further nesting that changes neither may be compressed.
+
+\section{Prejudice as premature closure}
+The Philosopher's Stone grounds prejudice as judgment formed before materially relevant pressures have been integrated. In OneLogic,
+\[
+\mathrm{PrematureClosure}(q=v,r)
+\]
+holds when $q=v$ is treated as settled while a materially adequate live possibility defeats it or an omitted material distinction can still change the judgment or response.
+
+The statistically or evidentially strongest interpretation can be provisionally favored. The failure occurs when provisional ranking is converted into settled judgment before materially relevant reality has closed the alternatives.
+
+\section{Optimal good-faith truth-seeking}
+Good faith alone is insufficient. Define mature truth-seeking relative to $r$ by
+\[
+\begin{aligned}
+\mathrm{Mature}(J_t,r)\Longleftrightarrow{}&
+\mathrm{SoundLiveState}\ \wedge\
+\mathrm{MateriallyAdequate}\ \wedge\
+\mathrm{DependenceCalibrated}\\
+&\wedge\ \mathrm{NoCategoricalOverreach}\ \wedge\
+\mathrm{ProvisionalNotCollapsed}\\
+&\wedge\ \mathrm{MaterialUncertaintyHandled}\ \wedge\
+\mathrm{ResponseOnMatureFrontier}\ \wedge\
+\mathrm{CorrectionOpen}.
+\end{aligned}
+\]
+
+Material uncertainty is handled by a proportionate discriminating inquiry, a correction-open provisional assumption, or mature suspension. If action cannot wait, the response must remain on the mature frontier without pretending the unresolved proposition was settled.
+
+\section{Absorbing Interpersonal Epistemic Logic}
+The earlier IEL work is treated as a discovery source rather than as a second live logic. Provenance and dependence become $G_t$; source weighting and epistemic continuity become defeasible support; source-truth non-identity remains strict consequence; provisional uptake becomes support-maximal but non-forced judgment; mature suspension becomes open judgment with no proportionate inquiry; clarification becomes an inquiry frontier; adverse-attribution control becomes encoding robustness plus no premature closure; precaution without guilt follows from action/belief separation; strategic observability follows from bridge validity; recursive belief follows from material representation depth; tragic choice follows from the nondominated response frontier; and anti-self-sealing remains model inadequacy and expansion.
+
+\section{One recursive process}
+The complete process is
+\[
+\begin{array}{c}
+\text{reality-contact}\to
+\text{materially adequate live possibilities}\to
+\text{provenance}\to
+\text{exact defeat}\to
+\text{defeasible support}\to
+\text{categorical test}\\
+\to\text{proportionate inquiry or suspension}\to
+\text{nondominated action if required}\to
+\text{consequence}\to
+\text{correction/expansion}\to\text{repeat}.
+\end{array}
+\]
+
+There is one logic because factual inference, interpersonal interpretation, source learning, affected welfare, inquiry, action, and correction are projections of the same reality-relative state and update discipline.
+
+\section{Falsification and status}
+The mature formulation requires revision if a categorical truth is warranted despite a live materially adequate counterexample; if provisional support must logically eliminate a live possibility without defeating contact; if a necessary maturity-relevant relation exists outside the current Stone-derived closure; if repeated dependent transmission can create independent warrant without new ancestry; if a dominated inquiry or response is objectively superior without adding a material success or correcting an omitted pressure; if precaution entails categorical guilt; if an admissible encoding defeats a supposedly robust categorical conclusion; or if correction requires forbidding model inadequacy, reopening, or expansion.
+
+Formal proof establishes consequences of stated assumptions, not that the assumptions exhaust reality. Bounded tests can falsify bounded claims but do not establish universality. New mature-judgment theorem obligations are recorded separately from already machine-proved strict OneLogic results.
 
 \end{document}

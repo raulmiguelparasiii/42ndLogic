@@ -17,9 +17,27 @@ A generator may be an LLM, search procedure, symbolic engine, human, program syn
 
 The dependency-free demo implements this loop over a finite hypothesis space.
 
+## Mature-judgment extension
+
+Live candidates may also carry defeasible comparative support. In this bounded solver the support preorder is instantiated by a numeric `support` field, but support is not treated as probability or truth.
+
+If live candidates disagree on the answer but every support-maximal candidate agrees, the solver can expose a `provisional_answer` while leaving `answer=None` and the status unresolved/non-identifiable.
+
+This is deliberate:
+
+```text
+provisional_answer != forced answer
+```
+
+The lower-supported alternative remains live until reality-contact defeats it. A high support score never eliminates a candidate by itself.
+
+The broader mature OneLogic formulation in `formal/MATURE_JUDGMENT.md` additionally specifies materially required distinctions, affected-welfare preservation, provenance/dependence, robust encoding, proportionate inquiry, suspension, and correction-open response frontiers. The public solver remains a compact demonstrator rather than a full domain implementation of every relation.
+
 ## Why this is useful
 
 A transformer can be attached as a candidate generator without granting it final authority. Compilers, unit tests, instruments, datasets, simulations, search results, or theorem provers can serve as reality-contact depending on the domain.
+
+A calibrated model or source-history model may affect provisional support without gaining categorical authority. This allows the system to distinguish “most warranted current interpretation” from “settled by the surviving reality.”
 
 The public solver is intentionally small. Production execution policy, live target selection, platform-specific automation, provider strategy, private traces, and other operational machinery are outside this repository.
 
