@@ -17,6 +17,7 @@ This index exists so a later analysis can refer directly to a named phenomenon w
 | Prejudice | closure while a materially governing distinction remains unintegrated | §21.11 / §8 |
 | Good faith gone wrong | truth-seeking aim/procedure + operative deviation + `D_C` + recursive persistence | §21.12 / §22 |
 | Talking past each other | opponent-model deviation fails to shrink under corrective contact while generating new dependent inference | §20 |
+| Manufactured absurdity / bad reductio | apparent contradiction generated only after `E-`, `E+`, `D_B`, or `D_M` | §26 |
 
 ## First-principles references
 
@@ -31,6 +32,7 @@ This index exists so a later analysis can refer directly to a named phenomenon w
 - correction debt: §12
 - deviation signature: §13
 - recursive update: §17
+- reductio / proof by contradiction: §26
 - interpersonal modeling: §18
 
 The formal counterpart is `formal/MATURE_JUDGMENT.md`; theorem obligations are in `formal/THEOREMS.md`; executable finite semantics are in `formal/one_logic/core.py`.

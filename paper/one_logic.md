@@ -770,6 +770,19 @@ truth-seeking aim or procedure present
 
 This distinguishes sincerity of aim from the actual truth-seeking quality of the recursive exchange without turning either into a primitive non-identity rule.
 
+
+### 21.13 Manufactured absurdity / bad reductio
+
+An apparent contradiction is produced only after the tested position has been distorted or an unwarranted consequence has been inserted.
+
+Signature:
+
+```text
+apparent contradiction
++ E- and/or E+ and/or D_B and/or D_M
++ contradiction absent from the warranted model of the tested assumption.
+```
+
 ---
 
 ## 22. Worked debate pattern: good faith gone wrong
@@ -914,7 +927,51 @@ The earlier non-identities remain useful as historical observations, but OneLogi
 
 ---
 
-## 26. Falsification
+
+## 26. Reductio ad absurdum as admissible-model elimination
+
+Reductio requires no new primitive operator in OneLogic.
+
+For a proposition or query value `P`, restrict the live state to:
+
+```text
+K_t[P] = {m in K_t(r) : m satisfies P}.
+```
+
+If every completion satisfying `P` is eliminated by grounded reality, materially required structure, or a warranted consequence of `P`, then:
+
+```text
+K_t[P] = empty.
+```
+
+`P` is then defeated relative to the current adequate representation.
+
+A common special case is:
+
+```text
+P -> Q
+and K_t(r) forces not-Q.
+```
+
+If the bridge from `P` to `Q` is warranted, no live completion can satisfy `P`.
+
+The reverse proof-by-contradiction form, `not-P -> contradiction -> P`, requires an exhaustive query partition. If undefinedness, a third value, or another live alternative remains, eliminating `not-P` does not by itself establish `P`.
+
+The contradiction must arise from warranted relations. If the absurd result appears only after unsupported insertion `E+`, unsupported exclusion `E-`, bridge defect `D_B`, or material representation loss `D_M`, the reductio has defeated a deviated representation rather than the original position.
+
+Thus:
+
+```text
+valid reductio:
+assumption -> warranted consequences -> genuine incompatibility -> elimination
+
+manufactured absurdity:
+representation/inference deviation -> manufactured incompatibility
+```
+
+---
+
+## 27. Falsification
 
 The architecture requires revision if any of the following is demonstrated:
 
@@ -925,15 +982,17 @@ The architecture requires revision if any of the following is demonstrated:
 5. dependent retransmission creates independent ancestry without any new observation, authentication, measurement, or transformation;
 6. a materially available warranted correction may be ignored indefinitely while the dependent judgment remains exact;
 7. a recursively distorted opponent model can remain exact despite repeated actual corrections that defeat it;
-8. a dominated inquiry or response is objectively superior without any offsetting material difference omitted by the model;
-9. model failure can be repaired by contraction alone after actuality has left the model class;
-10. a named phenomenon requires a genuinely new primitive that cannot be represented by the current relational core.
+8. a reductio can validly defeat an assumption while a materially adequate live completion satisfying that assumption remains;
+9. eliminating `not-P` can establish `P` despite a live undefined or third alternative;
+10. a dominated inquiry or response is objectively superior without any offsetting material difference omitted by the model;
+11. model failure can be repaired by contraction alone after actuality has left the model class;
+12. a named phenomenon requires a genuinely new primitive that cannot be represented by the current relational core.
 
 The tenth condition is especially important. If a future phenomenon cannot be generated from actual history, grounding, material closure, live completion, support, bridge validity, deviation, inquiry/action, and correction, OneLogic must expand rather than force the case into inadequate vocabulary.
 
 ---
 
-## 27. Status
+## 28. Status
 
 The strict OneLogic core has executable finite semantics and bounded falsification tests. The mature-judgment layer now has executable instances of provisional judgment, material representation preservation, bridge deviation, explicit measured bridge defect under supplied weights, correction debt, provenance, inquiry dominance, and response dominance.
 
