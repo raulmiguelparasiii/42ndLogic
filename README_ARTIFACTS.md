@@ -1,0 +1,1 @@
+OneLogic release artifacts branch. See the associated GitHub release for TeX, PDF, and ZIP downloads.
