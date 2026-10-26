@@ -184,6 +184,16 @@ If a material correction at `t` targets a member of this deviation, remains in `
 
 This criterion is agnostic to whether the psychological cause is prejudice, misunderstanding, strategic behavior, poor attention, or another latent mechanism. Those are further queries and require their own warrant.
 
+
+## T24. Reductio as live-region elimination
+
+For proposition or query value `P`, define `K[P] = {m in K : m satisfies P}`. If warranted consequence and grounded/material constraints eliminate every member of `K[P]`, then `K[P]` is empty and `P` is defeated relative to the current adequate model class.
+
+The reverse proof-by-contradiction step from `not-P` being impossible to categorical `P` is valid only when the represented query partition is exhaustive. If an undefined, third, or otherwise distinct live value remains, eliminating `not-P` does not establish `P`.
+
+A reductio is defective when the contradiction arises only after unsupported exclusion `E-`, unsupported retention `E+`, bridge defect `D_B`, or material representation loss `D_M`.
+
+
 # Strongest warranted judgment
 
 For a query family `Q`:

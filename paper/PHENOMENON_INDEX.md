@@ -17,6 +17,7 @@ This index exists so a later analysis can refer directly to a named phenomenon w
 | Prejudice | closure while a materially governing distinction remains unintegrated | §21.11 / §8 |
 | Good faith gone wrong | truth-seeking aim/procedure + operative deviation + `D_C` + recursive persistence | §21.12 / §22 |
 | Talking past each other | opponent-model deviation fails to shrink under corrective contact while generating new dependent inference | §20 |
+| Manufactured absurdity / bad reductio | apparent contradiction generated only after `E-`, `E+`, `D_B`, or `D_M` | §26 |
 
 ## First-principles references
 
