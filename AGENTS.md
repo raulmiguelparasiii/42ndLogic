@@ -6,7 +6,7 @@ Read this file before changing the project.
 
 42ndLogic is the public foundation repository for OneLogic: a falsifiable reality-tracking logic for strict inference, mature judgment, inquiry, correction, representation, and machine reasoning.
 
-The current target is one reality-relative judgment calculus, not a stack of separate modules for truth, empathy, testimony, morality, communication, or action.
+The current target is one first-principles, reality-relative recursive calculus. Do not grow separate modules for truth, empathy, testimony, morality, communication, fallacies, or action when the same phenomenon can be derived from the common relational core.
 
 ## Public/private boundary
 
@@ -19,88 +19,215 @@ This repository is intentionally limited to the public foundation:
 
 Do not add production revenue machinery, live opportunity discovery, target-selection policy, provider prompts, accumulated failure traces, platform-specific claim/submission behavior, private experiment data, or operational strategies whose value depends on keeping the execution advantage private.
 
-## Core invariants
+## First-principles invariants
 
-- There is one actual structured reality.
-- A finite reasoner works with a corrigible represented possibility space.
-- A live state `K` contains the possibilities not yet defeated by warranted information.
-- Strict categorical assertion is permitted only when the query is invariant across nonempty `K`.
-- A defeasible support ordering may rank live possibilities, but support alone may not delete a live possibility or manufacture categorical truth.
-- `provisionally favored` and `settled` are distinct statuses.
-- Reality-contact updates must retain every modeled successor compatible with the actual outcome and eliminate every modeled successor the outcome defeats.
-- If actuality is excluded, contraction alone cannot repair the state.
-- If actuality is outside the model class, the model class must expand or be replaced.
+- There is one actual time-indexed reality/history `H_t`.
+- Represented possibilities do not replace actuality. They are unresolved completions around what actual history and warranted grounding have already established.
+- `G_t = Ground(H_t)` is the grounded relational structure currently warranted by reality. `Ground` is an interface, not a claim that unrestricted perception or AGI has been solved.
+- For referent `r`, `Qmat_t(r)` is the least materially closed distinction family currently required by reality.
+- Current Stone-grounded material closure includes distinctions whose removal can change judgment through informational grounding, contextual interpretation, real-world constraint, affected welfare, consequence, or correction/answerability.
+- `K_t(r)` contains represented completions compatible with `G_t` while preserving `Qmat_t(r)`.
+- Strict categorical assertion is permitted only when the query is invariant across nonempty `K_t(r)`.
+- OneLogic should infer every categorical consequence warranted by `K_t(r)`, not merely avoid overclaiming.
+- A defeasible support preorder may rank live completions. Support may generate provisional consequence but may not delete a live completion or manufacture categorical truth.
+- Uncertainty is residue after correct grounding, material closure, inference, and proportionate inquiry. It is not an objective to preserve for its own sake.
+- Reality-contact/update must retain every modeled successor compatible with the actual transition and eliminate every modeled successor the transition defeats.
+- If actuality is excluded, contraction alone cannot repair the state. If actuality lies outside the represented model class, the class must expand or be replaced.
 - Undefined is not false.
-- A representation is adequate only relative to the materially required distinctions of the referent, not merely an arbitrarily admitted surface query family.
-- The current Stone-grounded material closure preserves distinctions whose loss can alter mature judgment through informational grounding, contextual interpretation, real-world constraint, affected welfare, consequence, or correction.
-- Affected welfare enters OneLogic as a materially required distinction where reality makes it relevant. Do not turn empathy into a scalar reward or a separate hidden module.
-- Evidence plurality is causal-informational plurality. Repetition or retransmission without new ancestry does not become independent corroboration.
-- Source standing may alter provisional support but does not determine truth. Previously earned standing persists defeasibly until counterevidence, domain transfer, correction failure, decay, or another material defeater changes it.
-- Consideration, belief, action, precaution, expression, commitment, source reliability, claim truth, memory sincerity, historical truth, visible correction, and latent policy remain distinct unless a warranted bridge connects them.
-- Material uncertainty should lead to a proportionate discriminating inquiry when one exists, otherwise correction-open suspension. Declining inquiry creates no evidence.
-- Action may occur under unresolved belief when consequence makes precaution or another nondominated response warranted. Action does not retroactively settle the proposition.
-- Mature response is the correction-open nondominated frontier over unresolved material pressures. Genuine tragic residue remains explicit rather than being hidden by a forced scalar optimum.
-- Robust categorical settlement must survive all materially adequate nondominated encodings of the accessible record.
-- Named fallacies and interpersonal failure labels are surface descriptions. The formal layer should derive them from unsupported exclusion/retention, invalid bridges, representational loss, bad inquiry, dependence inflation, premature closure, or failed correction.
+- Evidence plurality is causal-informational plurality. Repetition without new ancestry is not independent corroboration.
+- Source history is defeasible evidence that may alter support; it never becomes a truth oracle.
+- Affected welfare enters as a materially governing distinction where reality makes it relevant. Do not turn empathy into a scalar reward or hidden module.
+- Inquiry and response burden may remain vector-valued; do not invent a universal scalar when heterogeneous material pressures lack a warranted exchange rate.
 - OneLogic itself receives no privileged status. Model inadequacy, reopening, and revision remain legal outputs.
 
-## Current mature-judgment formulation
+## Canonical state
 
-The canonical formal overview is `formal/MATURE_JUDGMENT.md`.
+The canonical compact formal overview is `formal/MATURE_JUDGMENT.md`.
 
-The unified state is approximately:
+The current state is schematically:
 
 ```text
-J_t(r) = <Omega_t, K_t, G_t, >=_t, Qmat(r), I_t, A_t, T_t>
+One(H_t,r)
+ = <G_t, Qmat_t(r), K_t(r), >=_t, I_t, A_t, T_t, D_t>
 ```
 
 where:
 
-- `Omega_t` is the represented possibility class;
-- `K_t` is the still-live set;
-- `G_t` is causal-informational provenance;
+- `H_t` is actual transpired history;
+- `G_t` is grounded relational structure;
+- `Qmat_t(r)` is material closure;
+- `K_t(r)` is the live completion set;
 - `>=_t` is defeasible support;
-- `Qmat(r)` is the materially required query family;
 - `I_t` is available inquiry;
 - `A_t` is feasible response;
-- `T_t` is world transition.
+- `T_t` is transition structure;
+- `D_t` is the relational deviation signature.
 
-These are fields of one judgment state, not independent authorities.
+`paper/one_logic.md` is the narrative formulation. `paper/main.tex` must remain semantically aligned with it. `formal/THEOREMS.md` records exact theorem obligations and proof status.
 
-`paper/one_logic.md` is the current narrative formulation. `formal/THEOREMS.md` records exact theorem obligations and must distinguish proved gates from unproved obligations.
+## General relational laws
+
+### Strict consequence
+
+```text
+K |= (q=v)
+iff
+K is nonempty and every live completion defines q=v.
+```
+
+### General bridge
+
+For proposed bridge `A=a -> B=b`:
+
+```text
+D_B
+ = {m in K[A=a] : B(m) is undefined or B(m) != b}.
+```
+
+The categorical bridge is valid exactly when its premise region is nonempty and `D_B` is empty.
+
+Do not add special rules such as `do not assume ignorance`, `do not infer motive`, or `precaution is not guilt` if the case is already generated by this bridge law.
+
+If an independently warranted measure exists, a bridge defect may receive a magnitude. Without such a measure, the defect set is canonical.
+
+### Material representation loss
+
+For representation `h`:
+
+```text
+D_M(h,r)
+ = {(m,n,q) : h(m)=h(n), q in Qmat_t(r), q(m) != q(n)}.
+```
+
+Material adequacy requires `D_M` empty.
+
+### State deviation
+
+For independently warranted state `W` and adopted state `M`:
+
+```text
+E-(W,M) = W \ M
+E+(W,M) = M \ W.
+```
+
+Use the same operator for factual states, hypothesis sets, source models, opponent models, and other represented structures.
+
+### Correction debt
+
+```text
+D_C = material available admissible corrections \ integrated corrections.
+```
+
+A correction defeated by stronger reality need not revise the state. A warranted material correction cannot remain excluded while a dependent judgment is still called exact.
+
+### Deviation signature
+
+```text
+D_t = <E-, E+, D_B, D_M, D_C>.
+```
+
+This is the canonical set-valued distance from the warranted relational state. Componentwise inclusion supplies a partial order. Domain-specific measures may be layered on only when independently warranted.
+
+## Recursive update
+
+```text
+H_t --e_(t+1)--> H_(t+1)
+```
+
+induces
+
+```text
+One(H_(t+1),r')
+ = Correct(One(H_t,r), e_(t+1), omega_(t+1), r').
+```
+
+Correction may change grounding, closure, live completions, support, source models, inquiry, response, opponent models, deviation, or the model class itself.
+
+## Debate / interpersonal phenomena
+
+Do not create a second interpersonal logic.
+
+Let `W_t(A)` be the warranted model of participant A's position from actual debate history and `M_t(B->A)` B's operative model of A. Then opponent-model distortion is ordinary state deviation:
+
+```text
+E- = W_t(A) \ M_t(B->A)
+E+ = M_t(B->A) \ W_t(A).
+```
+
+A hidden-state attribution such as `A failed to consider X` is a candidate bridge and is tested by `D_B`.
+
+If a material correction targets current model deviation, remains in `D_C`, and the next dependent inference reuses the materially equivalent deviation, the failure persists recursively. Track persistence length `rho` as consecutive correction opportunities across which the equivalent defect survives and continues generating inference.
+
+`talking past each other`, `recursive frame lock`, and `good faith gone wrong` are diagnostic names for these generated traces, not primitives.
+
+Do not infer a subconscious motive from the structural trace unless a separate warranted bridge supports that motive.
+
+## Relation to the Philosopher's Stone
+
+Stone supplies the material maturity criterion:
+
+```text
+purpose = affected welfare <-> real-world constraint
+meaning = informational grounding <-> contextual interpretation
+accountability = answerability <-> insulation
+```
+
+OneLogic supplies the recursive inferential/update calculus.
+
+Stone prejudice is represented as closure while a materially governing distinction remains unintegrated or a materially adequate live completion defeats the closed judgment.
+
+OGTS corresponds to a grounded, materially closed, categorically exact, dependence-calibrated, proportionate, nondominated, correction-open OneLogic state whose deviation cannot be reduced without new material loss.
+
+## Relation to ULT
+
+ULT-style work is relevant to `Ground(H_t)`:
+
+```text
+reality / expression / intervention
+ <-> anonymous mathematical relational structure.
+```
+
+The current bounded Empathy reality-contact result is evidence that one Stone-relevant structure can be grounded from controlled anonymous interventions without semantic labels. It is not unrestricted raw-sensory grounding.
+
+Do not silently merge the 42ndMind canonical mind or ULT implementation into this repository. Treat them as external grounding research/interfaces unless explicitly requested.
 
 ## Relation to the old IEL work
 
-Interpersonal Epistemic Logic is a discovery source, not a second live logic beside OneLogic.
+IEL is a discovery source, not a second live logic.
 
-Useful IEL structure should be absorbed through the smallest existing OneLogic machinery:
+Useful IEL structure should be absorbed through the smallest OneLogic machinery:
 
-- provenance/dependence -> `G_t`;
-- source weighting/continuity -> defeasible support;
-- source-truth non-identity -> strict consequence remains independent of source status;
-- consideration/belief/action separation -> distinct projections of one judgment state;
-- provisional assumption -> support-maximal but non-forced judgment;
-- mature suspension -> open judgment with no proportionate inquiry;
-- clarification/inquiry value -> inquiry frontier;
-- adverse interpretation control -> encoding robustness + no premature closure;
-- precaution without guilt -> action/belief separation;
-- correction supremacy -> reality-contact revises every defeated component;
-- recursive relevance -> preserve higher-order structure only while materially distinguishing;
-- tragic choice -> nondominated response frontier with explicit residue;
-- anti-self-sealing -> model inadequacy remains available.
+```text
+causal-information graph   -> G_t
+provenance/dependence      -> grounded ancestry
+source weighting           -> >=_t
+epistemic continuity       -> persistence of undefeated evidence
+provisional uptake         -> provisional consequence P_t
+clarification              -> inquiry/correction
+manufactured position      -> E+
+caricature                  -> E-/E+ and possibly D_M
+correction refusal         -> D_C
+precaution                  -> action under unresolved proposition
+strategic observability    -> live latent-policy completions
+recursive belief           -> material closure depth
+tragic choice              -> nondominated response residue
+anti-self-sealing          -> legal model inadequacy / expansion.
+```
 
-Do not reintroduce these as separate named modules if they are derivable from the unified state.
+Earlier non-identities may remain in historical prose, but the live formal system should prefer bridge defects, deviation sets, material loss, provenance, and correction over lists of pairwise `X != Y` statements.
 
 ## Engineering rules
 
-- Keep the semantic core small.
+- Keep the semantic core small and generative.
+- Prefer general relational laws to named case logic.
+- Every new named phenomenon should first be tested against the current deviation signature before adding a primitive.
 - Treat LLMs as candidate generators, not truth authorities.
-- External tests, observations, proof checkers, compilers, experiments, and validated data are reality-contact adapters.
-- Do not claim a bounded search is a universal proof.
-- Do not claim a formal proof establishes that the formal assumptions exhaust reality.
+- External tests, observations, proof checkers, compilers, experiments, and validated data can be grounding/reality adapters.
+- Do not claim bounded search is universal proof.
+- Do not claim formal proof establishes that formal assumptions exhaust reality.
 - Preserve explicit falsification criteria.
-- Avoid adding a primitive when the same behavior is derivable from the current core.
-- Keep strict truth, defeasible support, inquiry burden, and response dominance distinct even though they live in one state.
-- Prefer partial orders and nondominated frontiers over invented scalar utilities when heterogeneous material pressures have no warranted common scale.
+- Avoid adding a primitive when current core behavior derives it.
+- Keep strict truth, defeasible support, inquiry burden, response dominance, and deviation distinct while allowing them to coexist in one state.
+- Prefer partial orders and nondominated frontiers over invented scalar utilities when there is no warranted common scale.
 - Keep public examples minimal and reproducible.
 - Never commit credentials, API keys, bank details, identity documents, or private contact information.

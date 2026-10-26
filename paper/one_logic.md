@@ -1,128 +1,54 @@
-# OneLogic: A Reality-Tracking Logic of Mature Judgment
+# OneLogic: A First-Principles Reality-Tracking Logic of Mature Judgment
 
 ## Abstract
 
-OneLogic is a reality-tracking logic for reasoning under one actual world and finite, corrigible representation. Its original strict core separates actuality from the live represented possibilities, permits categorical assertion only when every live possibility agrees, updates against reality-contact by eliminating exactly what the observed outcome defeats, and requires representational expansion when actuality no longer fits the model class.
+OneLogic is a proposed reality-tracking logic for mature judgment under one actual, time-indexed reality. Its purpose is not to replace truth with degrees of truth. Its purpose is to formalize the strongest judgment warranted by reality as it transpires: what is established, what is defeated, what is provisionally best supported, what remains unresolved after correct inference, what inquiry can discriminate the residue, what action is warranted under consequence, and when the representation itself must expand.
 
-This formulation extends that same logic from binary settlement into mature judgment without replacing strict truth with a fuzzy truth value and without adding separate modules for empathy, testimony, social reasoning, morality, or action. A single judgment state now carries: the live possibilities, causal-informational provenance, defeasible comparative support, the materially required distinctions of the referent, available inquiry, feasible response, and world transition. Categorical truth remains strict. Graded support orders what remains live without turning the best-supported interpretation into fact. Material relevance is constrained by the Philosopher's Stone: informational grounding, contextual interpretation, real-world constraint, affected welfare, consequence, and correction must retain their warranted governing force. The useful structure of the earlier Interpersonal Epistemic Logic is absorbed as consequences of this smaller state and its update discipline.
+The architecture begins with an actual history rather than with an arbitrary list of propositions. A grounding relation exposes structure from that history. Material closure determines which distinctions the current referent may not erase. Live models represent only unresolved completions compatible with the grounded history. Strict consequence is invariance across those completions. Defeasible support orders surviving alternatives without manufacturing categorical truth. Inquiry, action, consequence, and correction recursively change the actual history and therefore the next warranted judgment.
 
-The central result is a unified judgment process capable of returning categorical settlement, provisional favoring, unresolved judgment, proportionate inquiry, mature suspension, precaution without epistemic inflation, nondominated action under real tradeoff, explicit tragic residue, or model inadequacy. OneLogic therefore treats mature reasoning as reality-governed organization rather than as forced binary classification.
+The Philosopher's Stone supplies the material maturity criterion: informational grounding, contextual interpretation, real-world constraint, affected welfare, consequence, and correction must retain their warranted governing force. The Universal Language Track supplies a candidate route by which anonymous relational structure can be grounded from reality rather than supplied as semantic labels. The earlier Interpersonal Epistemic Logic is treated as a discovery source whose useful cases are compressed into general relational laws.
 
-## 1. Semantic basis
+Named fallacies are therefore not axioms. They are observable signatures of more general deviation: defective bridges, unsupported exclusion or retention, material representation loss, provenance error, premature closure, or unintegrated correction. The same formal machinery can expose a simple invalid inference, a source-weighting error, a caricature of another person's position, or a recursive debate deadlock without storing a special rule for each phenomenon.
 
-Let `Omega_t` be the represented class of complete structured possibilities at time `t`, and let `omega_t` be actuality whenever the representation is adequate.
+---
 
-A finite reasoner never possesses actuality merely by possessing a model. It carries a live set
+## 1. First principles
 
-```text
-K_t subseteq Omega_t
-```
+OneLogic is constrained by the following first-principles commitments.
 
-containing the possibilities not yet defeated by warranted reality-contact.
+### 1.1 One reality
 
-For a sound represented state:
+There is one actual history of what has transpired. Let
 
 ```text
-omega_t in K_t.
+H_t = <omega_0, e_1, omega_1, ..., e_t, omega_t>.
 ```
 
-Queries may be partial and multi-valued. `UNDEFINED` is not false.
+`omega_t` is the actual state at time `t`; `e_t` is the actual event or transition by which reality advanced.
 
-The mature OneLogic state relative to referent `r` is
+The formal object is not a claim that every finite reasoner has unrestricted sensory access to every fact. It establishes the ground of the logic: represented possibilities are answerable to the actual history, never the reverse.
 
-```text
-J_t(r) = <Omega_t, K_t, G_t, >=_t, Qmat(r), I_t, A_t, T_t>.
-```
-
-`G_t` is causal-informational provenance. `>=_t` is defeasible comparative support. `Qmat(r)` is the materially required query family. `I_t` is available reality-contact. `A_t` is feasible response. `T_t` represents world-changing transition.
-
-These are fields of one reality-relative state. None receives independent truth authority.
-
-## 2. Strict categorical consequence
-
-For nonempty `K_t`, a categorical assertion is licensed only by invariance:
-
-```text
-K_t |= (q = v)
-iff
-for every w in K_t, q(w) is defined and q(w)=v.
-```
-
-This remains the settlement rule even after graded support is introduced.
-
-A source may be highly reliable. One interpretation may be overwhelmingly plausible. A response may be practically urgent. None of these facts converts a live counterexample into nonexistence.
-
-The strict layer therefore continues to obey:
-
-> Preserve every possibility reality has not defeated. Eliminate exactly what warranted reality-contact defeats. Assert categorically only what the survivors force.
-
-## 3. Sharp reality-contact update
-
-Represent inquiry, observation, or intervention through a transition relation
-
-```text
-T_t subseteq Omega_t x O x Omega_(t+1).
-```
-
-After observed outcome `o`, define
-
-```text
-U*(K_t,o)
- = {w' : some w in K_t can produce outcome o and successor w'}.
-```
-
-Every posterior sound for the represented channel contains `U*`. `U*` is therefore the unique smallest sound posterior relative to that channel.
-
-If actuality has already been removed from the live set, further contraction cannot restore it. If actuality lies outside the model class, correction confined to that model class cannot restore it. OneLogic must reopen or expand representation rather than manufacture certainty.
-
-## 4. From binary settlement to mature judgment
-
-Binary truth remains necessary for categorical claims, but mature judgment often occurs before categorical settlement.
-
-OneLogic therefore distinguishes strict live possibility from defeasible comparative support.
-
-Let `>=_t` be a preorder over `K_t`. It may be produced by probability, ranking theory, calibrated evidential comparison, causal inference, source modeling, or another warranted method. OneLogic does not require all domains to use one numerical credence scale.
+### 1.2 Ground relations, not labels
 
 Let
 
 ```text
-Max_t = {w in K_t : no live w' is strictly better supported than w}.
+G_t = Ground(H_t).
 ```
 
-Then
+`Ground` exposes the warranted relational structure currently recoverable from the actual history. A relation can be supplied by direct observation, measurement, experiment, causal intervention, testimony with provenance, mathematical proof, validated transformation, or another reality-bearing route.
+
+Semantic labels are optional descriptions of the relation. They do not create its truth.
+
+### 1.3 Material relevance is discovered recursively
+
+For referent `r`, begin with the declared question and close under every distinction whose variation can still change mature judgment:
 
 ```text
-Forced(q=v)
-iff
-all live possibilities force q=v.
+Qmat_t(r) = lfp MaterialClosure(G_t, r).
 ```
 
-```text
-ProvisionallyFavored(q=v)
-iff
-not Forced(q=v)
-and all support-maximal live possibilities define q=v.
-```
-
-If the support-maximal possibilities disagree, the query remains open.
-
-The crucial non-collapse is
-
-```text
-ProvisionallyFavored(q=v) does not imply Forced(q=v).
-```
-
-A highly likely interpretation can therefore guide attention or inquiry while a materially live alternative prevents prejudicial closure.
-
-Changing support order alone never changes strict categorical consequence while `K_t` and the query semantics remain fixed.
-
-## 5. Material relevance and the Stone
-
-The original OneLogic preserved distinctions relative to an admitted query family. That is insufficient for mature judgment because a reasoner can appear perfectly exact after silently excluding the questions that matter.
-
-OneLogic therefore introduces a materially required query family `Qmat(r)`.
-
-A distinction belongs to `Qmat(r)` when erasing it can change mature judgment relative to the declared referent through one of the reality relations identified by the Philosopher's Stone:
+The current Stone-grounded closure includes distinctions capable of changing judgment through:
 
 ```text
 informational grounding
@@ -133,42 +59,212 @@ consequence
 correction / answerability.
 ```
 
-The set is referent-relative. A distinction irrelevant to one question may become decisive when the referent widens.
+If a newly discovered relation changes the judgment, the closure expands.
 
-A useful formal view is to treat `Qmat(r)` as the least fixed point of material closure: begin with the declared query and repeatedly add any distinction whose variation can alter informational support, interpretation, feasible constraint, affected welfare, consequence, correction, or the nondominated response frontier. Stop only when no further materially governing distinction is exposed.
+### 1.4 Infer as far as reality warrants
 
-This prevents the logic from obtaining artificial certainty by narrowing the world until inconvenient reality disappears.
+OneLogic does not preserve uncertainty as an objective. It derives every categorical consequence reality warrants and every justified provisional ordering among what remains unresolved.
 
-## 6. Empathy as logic
+Uncertainty is residue after correct grounding, closure, deduction, inference, and correction.
 
-In the Stone, empathy is concern for affected welfare. OneLogic does not need an emotional simulation module to represent that relation.
+### 1.5 Correction is recursive
 
-If two otherwise similar live possibilities differ in the condition of an affected subject and that difference can alter mature judgment, then the welfare query belongs to `Qmat(r)`.
-
-An adequate representation may not merge those possibilities.
-
-The logical form is:
+When reality advances,
 
 ```text
-AffectedWelfareRelevant(w1,w2,r)
-=>
-there exists q_welfare in Qmat(r)
-with q_welfare(w1) != q_welfare(w2).
+H_t -> H_(t+1),
 ```
 
-and therefore material adequacy requires
+all dependent structures remain revisable: grounding, material closure, live completions, support order, source models, opponent models, inquiry, action, and representation.
+
+### 1.6 Surface phenomena are derived
+
+Words such as `straw man`, `prejudice`, `good faith`, `guilt by precaution`, `source reset`, or `talking past each other` are not privileged formal operators. They are names for recurring relational signatures generated by the same core.
+
+---
+
+## 2. The canonical OneLogic state
+
+Let `Omega_t` be the currently represented class of complete structured completions around the grounded actual history.
+
+For referent `r`, define
 
 ```text
-h(w1) != h(w2)
+K_t(r)
+ = {m in Omega_t : m is compatible with G_t
+                     and preserves Qmat_t(r)}.
 ```
 
-for any representation `h` that would otherwise erase that distinction.
+`K_t(r)` does not compete with reality. It contains the unresolved completions still compatible with the reality already grounded.
 
-Empathy is thus operationalized as the preservation and governing use of affected welfare wherever reality makes welfare materially relevant.
+The canonical judgment state is
 
-Concern alone does not govern mature judgment. Welfare remains integrated with real-world constraint, information, context, consequence, and correction. This blocks sentimental overreach while also blocking cold calculation that treats affected persons as epistemically invisible.
+```text
+One(H_t,r)
+ = <G_t, Qmat_t(r), K_t(r), >=_t, I_t, A_t, T_t, D_t>.
+```
 
-## 7. Materially adequate representation
+where:
+
+- `G_t` is grounded relational structure;
+- `Qmat_t(r)` is the materially required distinction family;
+- `K_t(r)` is the still-admissible completion set;
+- `>=_t` is defeasible comparative support over the live completions;
+- `I_t` is available inquiry or discriminating contact;
+- `A_t` is feasible response;
+- `T_t` is represented transition structure;
+- `D_t` is the current relational deviation signature.
+
+These are fields of one reality-relative state. None independently determines truth.
+
+---
+
+## 3. Strict consequence
+
+A query `q` may be partial and multi-valued. `UNDEFINED` is not false.
+
+For nonempty `K_t(r)`:
+
+```text
+K_t(r) |= (q=v)
+iff
+for every m in K_t(r), q(m) is defined and q(m)=v.
+```
+
+Define the complete categorical consequence set:
+
+```text
+C_t(r) = C(K_t(r)).
+```
+
+The governing rule is:
+
+> Derive every categorical conclusion forced by the live completions, and no categorical conclusion defeated or left undefined by a live completion.
+
+This preserves the original OneLogic strict core.
+
+---
+
+## 4. Defeasible support and the strongest warranted judgment
+
+Reality often supports one live completion more strongly than another before strict settlement.
+
+Let `>=_t` be a warranted preorder over `K_t(r)`. It may be generated by probability, causal evidence, source calibration, ranking theory, or another defensible evidential method. OneLogic does not require one universal scalar credence.
+
+Let
+
+```text
+Max_t(r)
+ = {m in K_t(r) : no live m' is strictly better supported than m}.
+```
+
+Then define
+
+```text
+P_t(r) = C(Max_t(r)) \ C_t(r).
+```
+
+`P_t(r)` is the provisional consequence set: claims shared by every support-maximal completion but not forced by the whole live state.
+
+For one query:
+
+```text
+Forced(q=v)
+iff
+(q=v) in C_t(r).
+```
+
+```text
+Favored(q=v)
+iff
+(q=v) in P_t(r).
+```
+
+The remaining materially relevant queries form the unresolved residue.
+
+This gives the strongest warranted judgment without turning likelihood into fact.
+
+---
+
+## 5. The general relational bridge
+
+Most reasoning can be expressed as a proposed relation from some established or assumed structure to another.
+
+For queries `A` and `B`, consider the proposed bridge
+
+```text
+A=a -> B=b.
+```
+
+Restrict the live state to the premise region:
+
+```text
+K_t[A=a] = {m in K_t : A(m)=a}.
+```
+
+Define the bridge-defect set
+
+```text
+D_B(A=a -> B=b)
+ = {m in K_t[A=a] : B(m) is undefined or B(m) != b}.
+```
+
+The categorical bridge is valid exactly when
+
+```text
+K_t[A=a] is nonempty
+and
+D_B is empty.
+```
+
+This is the generative replacement for a long catalogue of non-identities.
+
+For example, if a premise is compatible with both
+
+```text
+speaker considered objection X
+```
+
+and
+
+```text
+speaker did not consider objection X,
+```
+
+then
+
+```text
+premise -> speaker failed to consider X
+```
+
+has a nonempty `D_B`. The attribution cannot be categorical.
+
+No special `assuming ignorance` rule is needed.
+
+---
+
+## 6. Measuring bridge deviation
+
+The defect set itself is canonical. It says exactly where the proposed bridge fails.
+
+If a warranted measure `mu_t` over the premise region is independently available, define
+
+```text
+delta_B
+ = mu_t(D_B) / mu_t(K_t[A=a]).
+```
+
+`delta_B = 0` means no measured bridge defect. Larger values indicate a larger measured defect relative to that supplied measure.
+
+OneLogic does not invent `mu_t`. Equal counting of represented worlds is only legitimate when the representation makes that counting meaningful.
+
+Thus a fallacy can have a measurable distance from correct inference without pretending that every domain shares one universal metric.
+
+---
+
+## 7. Material representation loss
+
+A reasoner can reason perfectly over a bad representation.
 
 Let
 
@@ -176,352 +272,675 @@ Let
 h : Omega_t -> H
 ```
 
-be a proposed compression.
+be a proposed compression or model.
 
-It is materially adequate relative to `r` only if
+Define the material-loss set
 
 ```text
-h(w1)=h(w2)
-=>
-q(w1)=q(w2)
+D_M(h,r)
+ = {(m,n,q) : h(m)=h(n),
+                q in Qmat_t(r),
+                q(m) != q(n)}.
 ```
 
-for every `q in Qmat(r)`, including definedness.
+Differences of definedness also count.
 
-Compression is therefore allowed where difference is genuinely irrelevant and forbidden where it destroys a maturity-relevant distinction.
-
-This also governs recursive belief depth. Higher-order beliefs are represented only while they can alter a material query, consequence, or mature response. Further nesting that changes none of those may be compressed. If deeper recursion matters, it must remain.
-
-## 8. Encoding objectivity
-
-Real records can admit multiple reasonable encodings. OneLogic cannot become mature merely by selecting the encoding that yields the desired answer.
-
-Let `Enc_t(r)` be the materially adequate nondominated encodings of the accessible record. Then robust settlement requires
+Material adequacy is
 
 ```text
-RobustForced(q=v)
+D_M(h,r) = empty.
+```
+
+This one structure covers overcompression, caricature, omitted welfare, erased context, lost causal distinction, and other cases where the reasoning machinery was fed a representation too crude for the referent.
+
+---
+
+## 8. The Philosopher's Stone as material closure
+
+The Stone supplies the current first-principles criterion for what mature judgment may not silently discard.
+
+Purpose integrates:
+
+```text
+affected welfare <-> real-world constraint.
+```
+
+Meaning integrates:
+
+```text
+informational grounding <-> contextual interpretation.
+```
+
+Accountability determines whether materially relevant reality retains corrective authority.
+
+In OneLogic, these are not separate reasoning modules. They constrain `Qmat_t(r)`.
+
+If two completions differ in affected welfare and that difference can change judgment or action, welfare must remain represented. If two differ in a real constraint that changes feasibility, the constraint must remain represented. The same applies to information, interpretation, consequence, and correction.
+
+Prejudice therefore has a structural logical form:
+
+```text
+PrematureClosure(j,r)
 iff
-for every E in Enc_t(r), K_t^E |= (q=v).
+j is treated as settled
+while some materially governing distinction remains unintegrated
+or some materially adequate live completion defeats j.
 ```
 
-If one admissible encoding preserves a materially live alternative, categorical closure is not robust.
+The Stone's optimal good-faith truth-seeking condition becomes the mature limit of the same logic: the judgment integrates the materially relevant field while remaining maximally correction-open.
 
-This captures the useful IEL principle of encoding objectivity in the same possibility-preserving logic.
+---
 
-## 9. Provenance and evidential dependence
+## 9. Empathy as affected-welfare structure
 
-`G_t` represents causal-informational ancestry among observations, records, expressions, transformations, inferences, commitments, actions, consequences, and corrections.
+Empathy enters OneLogic through material affected welfare.
 
-Evidence strength is not raw repetition count.
+If an event changes an ordered state belonging to an affected non-self entity, and variation in that state can change the judgment or response, then the corresponding distinction enters material closure.
 
-If ten reports descend from one observation, their number does not create ten independent observations. A retransmission adds independent evidential ancestry only when it introduces new observation, authentication, measurement, or another genuinely new testable transformation.
+No emotional simulation is required by the formal relation. No scalar welfare utility is assumed.
 
-Thus
+The Universal Language Track has already demonstrated a bounded anonymous intervention pattern of this form: ownership, controlled dependence, causal update, consequence linkage, and ordered magnitude can recover a non-self consequence-bearing channel without giving the miner the semantic word `empathy`.
+
+That bounded result is a candidate instance of `Ground(H_t)`, not a claim that unrestricted raw-sensory grounding has already been solved.
+
+---
+
+## 10. Provenance and source continuity
+
+Let `G_t` include causal-informational ancestry.
+
+Repeated transmission is not new independent contact. Ten reports descending from one observation do not become ten independent observations merely because they are numerous.
+
+Source history can alter `>=_t` when it is materially relevant: prior access, calibration, successful prediction, transparent uncertainty, correction under pressure, domain competence, and acknowledged error can change provisional support.
+
+The support update remains defeasible. A live counterexample stays live until reality defeats it.
+
+Thus source continuity is represented by persistence of undefeated evidential structure in `G_t`, not by a separate trust oracle.
+
+---
+
+## 11. State deviation
+
+Suppose an independently warranted state is `W` and a reasoner adopts `M`.
+
+Define
 
 ```text
-independent evidence = independent ancestry,
-not number of copies.
+E-(W,M) = W \ M
 ```
 
-This blocks corroboration inflation, citation-loop inflation, and apparent consensus produced by a common source.
-
-The support preorder is updated after dependence is represented, not before.
-
-## 10. Source continuity without source authority
-
-Source history is evidence about later testimony, but source and truth remain distinct.
-
-Previously demonstrated domain-relevant access, calibration, successful prediction, transparent uncertainty, correction under pressure, and acknowledgment of error can alter provisional support. Previously earned standing does not rationally reset to zero merely because a new statement arrives.
-
-Continuity remains defeasible. Contradiction, domain transfer, hidden incentive, repeated overconfidence, manipulation, correction refusal, or other defeating evidence can reduce the standing.
-
-Formally:
+for unsupported exclusion, and
 
 ```text
-SourceStanding_t(s,r) -> update >=_t
+E+(W,M) = M \ W
 ```
 
-while
+for unsupported retention.
+
+This is useful far beyond ordinary factual sets.
+
+If `W` is the warranted model of another person's position and `M` is the opponent's operative model, then:
+
+- `E-` contains parts of the person's warranted position that the opponent's frame removed;
+- `E+` contains positions the opponent inserted without sufficient warrant.
+
+A caricature can therefore be measured as model deviation rather than merely labelled a `straw man`.
+
+---
+
+## 12. Correction debt
+
+Let `C_t` be the set of material, available, admissible corrections capable of changing a dependent judgment.
+
+Let `Integrated_t` be the subset actually incorporated before that dependent judgment is reused or closed.
+
+Define
 
 ```text
-SourceStanding_t(s,r) -/-> q is true.
+D_C = C_t \ Integrated_t.
 ```
 
-A reliable source may be wrong. An unreliable source may report truth. No source property replaces live reality.
+`D_C` is correction debt.
 
-Testimonial weight and inquiry value also remain distinct. A source can deserve little direct belief while remaining useful for locating documents, actors, distinctions, experiments, or counterevidence.
+A correction can be a clarification, counterexample, new observation, measurement, consequence, speaker correction of their own stated position, proof failure, or another material reality-bearing update.
 
-## 11. One anti-collapse rule
+The logic does not require every offered objection to be accepted. A correction enters `Integrated_t` only to the extent its warranted content is actually processed. A correction defeated by stronger reality need not revise the judgment.
 
-A large number of interpersonal reasoning failures are instances of the same structural mistake: identifying two relations without a warranted bridge.
+---
 
-OneLogic therefore does not store separate primitive prohibitions for every named mistake. T10 applies generally:
+## 13. The deviation signature
 
-> A categorical bridge fails when one live possibility satisfies its premise while defeating its conclusion.
-
-Consequently, without a warranted bridge, OneLogic refuses the following identifications:
+The canonical diagnostic object is
 
 ```text
-expression = private judgment
-omission = denial
-disclosed basis = complete basis
-source reliability = claim truth
-alignment = coordination
-consideration = belief
-belief = action
-precaution = guilt
-sincerity = memory fidelity
-memory fidelity = historical truth
-visible correction = correction-open policy
-later truth = earlier evidential warrant.
+D_t = <E-, E+, D_B, D_M, D_C>.
 ```
 
-These become applications of one logic rather than an expanding list of conversational rules.
+This is a set-valued distance from the currently warranted relational state.
 
-## 12. Material uncertainty and inquiry
+The zero signature means exactness relative to the represented referent:
 
-Let `U_t(r)` be the unresolved material distinctions still capable of changing judgment or response.
+```text
+E- = E+ = D_B = D_M = D_C = empty.
+```
 
-Each available inquiry `i` has a material gain set and a burden vector:
+Componentwise set inclusion gives a partial order of deviation. If warranted measures exist, each component may also receive a magnitude.
+
+OneLogic does not collapse heterogeneous defects into one universal number merely for convenience.
+
+This is where useful non-identity intuitions survive in stronger form. Instead of saying only that two things are different, OneLogic asks what bridge connects them, where that bridge fails, what representation was lost, and how large the defect is under an independently justified measure.
+
+---
+
+## 14. Inquiry
+
+Let `U_t(r)` be the material unresolved residue capable of changing judgment or response.
+
+For inquiry `i`, define:
 
 ```text
 Gain(i) subseteq U_t(r)
-Cost(i) = <time, money, risk, privacy, irreversibility, attention, ...>.
 ```
 
-The burden remains vector-valued because heterogeneous real costs need not have a universal exchange rate.
-
-Inquiry `i1` dominates `i2` when `i1` resolves a superset of relevant uncertainty while imposing no greater represented burden in any dimension, with at least one strict improvement.
-
-The proportionate inquiry frontier is the available, admissible, positive-gain, nondominated inquiry set.
-
-This generic rule yields clarification, speaker inquiry, independent research, inferential testing, direct observation, consequence testing, or any other domain-specific channel without making them separate primitives.
-
-Declining inquiry creates no evidence:
+and a burden vector
 
 ```text
-NoInquiry -/-> q
-NoInquiry -/-> not-q.
+Cost(i) = <time, money, safety, privacy, irreversibility, attention, ...>.
 ```
 
-## 13. Mature suspension
+Inquiry `i1` dominates `i2` when it resolves a superset of material uncertainty while imposing no greater represented burden in any dimension, with at least one strict improvement.
 
-When a materially relevant proposition remains unresolved and no proportionate inquiry is currently available or warranted, categorical judgment remains suspended.
+The proportionate inquiry frontier contains available admissible positive-gain inquiries not dominated by another.
 
-```text
-Suspend(q)
-iff
-q is not forced
-and no proportionate discriminating inquiry is available
-and correction remains open
-and the reasoner does not act as though q were settled.
-```
+Clarification, observation, source checking, experiment, direct measurement, causal intervention, or consequence testing are therefore instances of one generic reality-seeking operation.
 
-Suspension can coexist with a provisional ordering. One interpretation may currently be more plausible than another while neither is treated as fact.
+---
 
-This is especially important for interpersonal adverse attribution. The most likely negative interpretation can be provisionally favored while a live benign or less severe interpretation blocks settled accusation.
+## 15. Suspension
 
-## 14. Precaution without epistemic inflation
+If the strongest correct inference leaves a material query unresolved and no proportionate discriminating inquiry is currently warranted, categorical closure is withheld.
 
-Belief and action are distinct projections of `J_t(r)`.
+This is not passive uncertainty. It is the exact residue after the available inferential and inquiry structure has been exhausted proportionately.
 
-An unresolved proposition may justify action when the consequence profile makes a reversible protective response nondominated across the live possibilities.
+A provisional ordering may still exist.
 
-```text
-Act(a) -/-> Settled(q).
-```
+---
 
-A credible smoke warning can justify evacuation while the existence of a fire remains unresolved. A plausible risk can justify protection without establishing guilt. Action does not need certainty when consequence makes waiting irrational, but action cannot be used afterward as proof that the unresolved accusation was true.
+## 16. Action, consequence, and mature response
 
-## 15. Mature response frontier
-
-For feasible response `a`, let
+For response `a`, let
 
 ```text
 F(a,r)
 ```
 
-be the set of materially relevant pressures that remain unresolved, violated, or sacrificed by that response.
+be the set of materially relevant pressures left unresolved, violated, or sacrificed.
 
-A correction-open response `a` dominates `b` when
+Correction-open `a` dominates `b` when
 
 ```text
 F(a,r) proper-subset F(b,r).
 ```
 
-This is non-loss plus correction: every represented success of `b` is preserved, at least one additional failure is repaired, and no offsetting unresolved failure is introduced.
-
-The mature response set is
+The mature response frontier is
 
 ```text
 Y*(r)
- = {a : CorrectionOpen(a)
-        and there is no correction-open a' that dominates a}.
+ = {a : correction-open
+        and no correction-open a' strictly dominates a}.
 ```
 
-OneLogic therefore permits more than one objectively mature response when reality contains a genuine unresolved tradeoff.
+If no feasible action has empty residue, OneLogic preserves the tragic residue rather than manufacturing a clean optimum.
 
-## 16. Tragic choice
+Action can be warranted while a motivating proposition remains unresolved. The action is justified by its consequence profile across the live completions, not by pretending the proposition has become fact.
 
-Some situations have no response with empty material residue.
+---
 
-If
+## 17. Recursive update
+
+When reality advances:
 
 ```text
-for every feasible a, F(a,r) != empty,
+H_t --e_(t+1)--> H_(t+1),
 ```
 
-maturity does not invent a clean answer. OneLogic returns the correction-open nondominated frontier and preserves every remaining sacrificed pressure explicitly.
-
-This absorbs IEL's tragic-choice machinery into ordinary response dominance.
-
-## 17. Time and world-changing action
-
-Truth is time-indexed.
-
-An action at `t` can make a proposition true at `t+1` without proving that it was true or warranted at `t`.
+OneLogic updates recursively:
 
 ```text
-q(omega_(t+1)) = true
--/->
-q(omega_t) = true.
+One(H_(t+1), r')
+ = Correct(One(H_t,r), e_(t+1), omega_(t+1), r').
 ```
 
-Self-fulfilling and self-defeating outcomes are therefore ordinary causal transitions, not retroactive evidence.
-
-The same rule blocks post-hoc rationalization: a later explanation or successful outcome does not prove that the relevant integration was present before the action unless the pre-event state or policy supplies that bridge.
-
-## 18. Strategic agents and latent policy
-
-Observed compliance, transparency, concession, independence, or correction may be generated strategically.
-
-OneLogic therefore permits a claim about a latent policy only when the bridge from observed behavior to that policy survives the live strategic possibilities.
-
-An evaluator-aware performance that could occur under both correction-open and correction-resistant policies leaves the latent query unresolved.
-
-The logic does not need a special deception detector. It preserves the alternative until discriminating reality-contact defeats it.
-
-## 19. Prejudice as premature closure
-
-The Philosopher's Stone grounds prejudice as judgment formed before materially relevant pressures have been integrated.
-
-OneLogic gives this an executable logical condition:
+Operationally:
 
 ```text
-PrematureClosure(q=v,r)
-iff
-q=v is treated as settled
-and either
-  a materially adequate live possibility defeats q=v,
-or
-  an omitted material distinction can still change q or the mature response.
-```
-
-The highest-ranked interpretation may therefore be provisionally favored without being prejudicial. The failure occurs when provisional ranking is converted into settled judgment before material reality has closed the alternative.
-
-This is the exact place where binary classification becomes mature judgment.
-
-## 20. Optimal good-faith truth-seeking
-
-Good faith alone does not make reasoning mature. A sincere reasoner can still omit consequence, ignore welfare, overread context, count dependent reports as independent, or close uncertainty too early.
-
-Define mature OneLogic truth-seeking relative to `r` by the conjunction:
-
-```text
-Mature(J_t,r)
-iff
-SoundLiveState(J_t)
-and MateriallyAdequate(J_t,r)
-and DependenceCalibrated(J_t)
-and NoCategoricalOverreach(J_t)
-and ProvisionalNotCollapsed(J_t)
-and MaterialUncertaintyHandled(J_t,r)
-and ResponseOnMatureFrontier(J_t,r)
-and CorrectionOpen(J_t,r).
-```
-
-`MaterialUncertaintyHandled` means that unresolved material uncertainty is met by a proportionate discriminating inquiry, a correction-open provisional assumption, or mature suspension. If action cannot wait, action must come from the mature response frontier without falsely settling the unresolved proposition.
-
-This is the OneLogic form of optimal good-faith truth-seeking. The Stone supplies what mature judgment must remain answerable to; OneLogic supplies the state and update discipline that keeps those pressures governing.
-
-## 21. Absorbing Interpersonal Epistemic Logic
-
-IEL is now treated as a discovery source for relations that OneLogic should generate, rather than as a second logic beside it.
-
-Its useful results reduce as follows:
-
-```text
-claim/proposition alternatives          -> K_t
-causal-information graph                -> G_t
-provenance/dependence                   -> ancestry in G_t
-source weighting                        -> defeasible >=_t
-epistemic continuity                    -> persistence of undefeated source evidence
-source-truth non-identity               -> strict consequence independent of source standing
-consideration/belief/action separation  -> distinct projections of J_t
-provisional assumption                  -> support-maximal but non-forced judgment
-mature suspension                       -> open judgment with no proportionate inquiry
-clarification/inquiry value             -> inquiry frontier
-adverse interpretation control          -> robust encoding + no premature closure
-precaution without guilt                -> action/belief separation
-correction supremacy                    -> reality-contact revises every defeated component
-strategic observability                 -> bridge validity over latent-policy alternatives
-recursive belief                        -> material representation depth
-tragic choice                           -> nondominated response frontier with residue
-memory/sincerity non-identity            -> bridge discipline
-institutional policy                    -> represented world-level agent/policy structure
-framework anti-self-sealing             -> model inadequacy remains a legal output.
-```
-
-The interpersonal vocabulary is compressed into OneLogic rather than duplicated.
-
-## 22. One recursive process
-
-The complete reasoning process is:
-
-```text
-reality-contact
- -> construct / preserve materially adequate possibilities
- -> preserve causal-informational provenance
- -> eliminate only what contact defeats
- -> update defeasible support among survivors
- -> test categorical invariance
- -> if unresolved, inspect material uncertainty
- -> use a proportionate nondominated inquiry when available
- -> otherwise suspend categorical judgment
- -> if action is required, act from the correction-open nondominated response frontier
- -> observe consequence
- -> revise support, source models, interpretation, representation, belief, and policy wherever reality defeats them
- -> expand the model if required
+actual history
+ -> Ground
+ -> material closure
+ -> live completions
+ -> strict consequence
+ -> defeasible support
+ -> strongest warranted judgment
+ -> inquiry / response
+ -> actual consequence
+ -> corrected history
  -> repeat.
 ```
 
-There is one logic because the same objects and same update discipline generate factual judgment, interpersonal interpretation, source learning, moral consequence, inquiry, action, and correction.
+A newly transpired event can add relations, defeat completions, change support, widen the referent, expose a representation loss, resolve a query, create new inquiry, or require model expansion.
 
-## 23. Falsification
+---
 
-The mature formulation must be revised if a counterexample shows any of the following:
+## 18. Interpersonal modeling as ordinary OneLogic
 
-1. categorical truth can be warranted while a live materially adequate counterexample remains;
-2. provisional support logically must eliminate a live possibility even without defeating reality-contact;
-3. a necessary maturity-relevant distinction exists outside informational grounding, contextual interpretation, real constraint, affected welfare, consequence, and correction;
-4. a distinction included by material closure can always be erased without changing any possible mature judgment, consequence, response, or correction condition;
-5. repetition with no new causal-informational ancestry can create genuinely independent evidential warrant;
-6. a dominated inquiry or response is objectively superior despite preserving no additional material success and introducing no compensating correction;
-7. mature suspension requires pretending an unresolved proposition is settled;
-8. precaution logically entails guilt or categorical belief;
-9. a categorical conclusion remains licensed even though an admissible materially adequate encoding defeats it;
-10. correction requires forbidding model inadequacy, reopening, or representation expansion.
+A debate does not require a special interpersonal logic.
 
-OneLogic receives no exemption from its own standard. A material counterexample that defeats the architecture requires correction of the architecture.
+Let
 
-## 24. Scope and status
+```text
+W_t(A)
+```
 
-OneLogic does not claim that every linguistic sentence is Boolean, every domain should use the same probability model, every human value can be reduced to one utility number, or every possible reasoning problem is decidable.
+be the currently warranted model of participant `A`'s position from the actual debate record, including A's own materially relevant statements, clarifications, commitments, and corrections.
 
-Strict consequence, defeasible support, inquiry burden, and response dominance are deliberately separated because they answer different questions inside one judgment state.
+Let
 
-The formal theorem layer establishes only the claims actually encoded and proved. Executable finite tests can falsify bounded cases but do not establish universality. Lean or another proof assistant can verify general consequences once the mature obligations are encoded. Formal proof still does not prove that the chosen primitives exhaust reality; that remains an empirical and philosophical falsification condition.
+```text
+M_t(B->A)
+```
 
-The objective target is compact:
+be participant `B`'s operative model of A's position as revealed by the inferences and responses B actually makes.
 
-> Keep reality live until reality closes it. Give the best-supported interpretation its warranted provisional weight. Preserve every material distinction, including affected welfare, that can still change mature judgment. Inquire proportionately. Suspend when warranted. Act without pretending uncertainty disappeared. Let consequence and correction reopen everything that reality defeats.
+Then ordinary state deviation gives
+
+```text
+E-_t = W_t(A) \ M_t(B->A)
+```
+
+and
+
+```text
+E+_t = M_t(B->A) \ W_t(A).
+```
+
+No special `straw man` primitive is necessary.
+
+If B's counterargument depends on a hidden-state attribution such as
+
+```text
+A did not consider X,
+```
+
+that attribution is tested by the ordinary bridge rule. If the actual record remains compatible with A having considered X, categorical attribution fails. If A then supplies warranted clarification showing X was already integrated, the live state must update accordingly.
+
+---
+
+## 19. Recursive frame lock
+
+A powerful debate failure occurs when a model error survives the very correction that could repair it and then generates the next round of reasoning.
+
+Suppose at time `t`:
+
+```text
+Delta_t = <E-_t, E+_t>
+```
+
+is the deviation between the warranted model of A and B's operative model of A.
+
+A material correction `c_t` targets some member of `Delta_t`.
+
+If:
+
+```text
+c_t remains in D_C,
+```
+
+and B's next dependent inference still uses the same deviating structure, then the deviation has persisted recursively.
+
+Define the persistence length `rho` as the number of consecutive correction opportunities across which a materially equivalent defect survives and continues generating dependent inference.
+
+A large `rho` indicates a strong recursive frame lock.
+
+The psychological cause is a separate query. It may be prejudice, misunderstanding, strategic behavior, poor attention, identity threat, rigid debate habit, or something else. OneLogic does not settle that cause merely from the existence of the loop.
+
+---
+
+## 20. Talking past each other
+
+Two participants talk past each other when their operative models of the other's position remain materially divergent and the exchange fails to reduce that divergence despite available corrective contact.
+
+The phenomenon can be one-sided or mutual.
+
+For two participants A and B:
+
+```text
+Delta_(A<-B,t) = deviation of B's model of A
+Delta_(B<-A,t) = deviation of A's model of B.
+```
+
+A productive exchange tends to reduce the materially relevant components of these deviations as correction accumulates.
+
+A deadlocked exchange retains or enlarges them while new arguments are generated from the distorted models.
+
+This exposes the underlying logic of a heated debate without relying on surface politeness, speaking style, or who appears more confident.
+
+---
+
+## 21. Phenomenon isolation atlas
+
+The following names are diagnostic labels for recurring signatures. The logic underneath them is general.
+
+### 21.1 Assumed ignorance
+
+Observed premise or statement is used to infer that the speaker failed to consider some objection.
+
+Signature:
+
+```text
+D_B(statement -> ignorance) nonempty.
+```
+
+If the adopted opponent model also inserts the ignorance state beyond the warranted model:
+
+```text
+E+ nonempty.
+```
+
+### 21.2 Manufactured position
+
+A participant attributes a position not warranted by the record.
+
+Signature:
+
+```text
+E+ nonempty.
+```
+
+Often accompanied by bridge defect from expression to attributed latent stance.
+
+### 21.3 Caricature / frame substitution
+
+The operative opponent model removes materially important qualifications or introduces stronger claims than the record warrants.
+
+Signature:
+
+```text
+E- nonempty and/or E+ nonempty,
+```
+
+possibly with
+
+```text
+D_M nonempty
+```
+
+when the model itself erased a material distinction.
+
+### 21.4 Omission-as-denial
+
+Signature:
+
+```text
+D_B(omission -> denial) nonempty.
+```
+
+### 21.5 Guilt-by-precaution
+
+Signature:
+
+```text
+D_B(protective action -> settled guilt) nonempty.
+```
+
+### 21.6 Corroboration inflation
+
+Dependent transmissions are treated as independent support.
+
+Signature:
+
+```text
+provenance ancestry count < assumed independent evidence count.
+```
+
+### 21.7 Source reset
+
+Previously relevant undefeated source evidence is removed without a defeater.
+
+Signature:
+
+```text
+E- contains still-warranted source-history structure.
+```
+
+### 21.8 Silent adverse closure
+
+An adverse interpretation is treated as settled while live materially adequate alternatives remain.
+
+Signature:
+
+```text
+Favored(q=v)
+plus categorical treatment
+plus live bridge/model defect.
+```
+
+### 21.9 Correction foreclosure
+
+Signature:
+
+```text
+D_C nonempty.
+```
+
+### 21.10 Recursive frame lock
+
+Signature:
+
+```text
+opponent-model deviation
++ targeted correction debt
++ persistence rho > 0.
+```
+
+### 21.11 Prejudice
+
+Signature:
+
+```text
+settled judgment
++ materially governing unintegrated distinction.
+```
+
+This is the Stone condition of judgment formed before its relevant pressures have been integrated.
+
+### 21.12 Good faith gone wrong
+
+A participant may genuinely intend to stress-test ideas or reach truth while the operative process still becomes correction-resistant.
+
+The intention itself does not repair the process.
+
+A characteristic signature is:
+
+```text
+truth-seeking aim or procedure present
++ opponent-model deviation
++ material correction debt
++ recursive persistence.
+```
+
+This distinguishes sincerity of aim from the actual truth-seeking quality of the recursive exchange without turning either into a primitive non-identity rule.
+
+---
+
+## 22. Worked debate pattern: good faith gone wrong
+
+Consider a generic debate.
+
+Participant A gives a premise.
+
+Participant B attempts to stress-test it by constructing a detailed logical frame of A's position. B insists on completing that frame before allowing A to correct it.
+
+The first relevant object is not B's tone. It is B's operative model:
+
+```text
+M_t(B->A).
+```
+
+If the frame removes qualifications in A's actual record or adds commitments A has not made, then:
+
+```text
+E- and/or E+ become nonempty.
+```
+
+B may then derive a conclusion from this framed model. Internally, the deduction can be valid relative to `M_t(B->A)` while remaining externally defective because the model itself deviates from `W_t(A)`.
+
+A attempts to clarify. If the clarification is materially relevant and warranted, it becomes a correction opportunity targeting the model deviation.
+
+If B immediately objects before the clarification is integrated and continues reasoning from the old frame, then:
+
+```text
+D_C nonempty.
+```
+
+If the same frame generates the next objection, the recursive persistence length increases:
+
+```text
+rho := rho + 1.
+```
+
+A is then forced to spend further turns reconstructing how B reached conclusions about a position A does not hold. If those corrective attempts are again interrupted or rejected before their content is integrated, the loop repeats.
+
+The resulting deadlock is:
+
+```text
+frame deviation
+ -> critique of deviated frame
+ -> attempted correction
+ -> correction debt
+ -> reuse of deviated frame
+ -> new critique
+ -> ...
+```
+
+This explains how a debate can be procedurally rigorous yet epistemically poor. The local syllogisms may be orderly while the recursive opponent-model update is defective.
+
+It also explains why the phenomenon need not imply conscious bad faith. If B sincerely believes the frame is an objective stress test, the truth-seeking intention may be genuine while the actual process has nonzero deviation and correction debt.
+
+OneLogic therefore isolates the failure at the level where it occurs rather than inferring a subconscious motive without evidence.
+
+---
+
+## 23. Optimal good-faith truth-seeking
+
+For referent `r`, define an OGTS-compatible state schematically by:
+
+```text
+OGTS(One(H_t,r))
+iff
+GroundedInActualHistory
+and MateriallyClosed
+and CategoricallyExact
+and DependenceCalibrated
+and ProvisionallyProportionate
+and InquiryProportionate
+and ResponseNondominated
+and CorrectionOpen
+and D_t is nondominated / minimized without material loss.
+```
+
+At the Stone peak, information and contextual interpretation are integrated, affected welfare and real constraint jointly govern purpose, and materially relevant correction retains maximal authority.
+
+OneLogic supplies the inferential/update calculus by which that structure operates through time.
+
+Good faith is therefore not reduced to politeness, sincerity, or compliance with debate procedure. A good-faith truth-seeking process must allow materially relevant reality to alter the operative judgment.
+
+---
+
+## 24. Relation to the Universal Language Track
+
+OneLogic requires `Ground(H_t)` but does not assume that unrestricted grounding has already been solved.
+
+The Universal Language Track attacks this interface:
+
+```text
+surface expression / observation / intervention
+ <-> anonymous mathematical relational structure
+ <-> reality.
+```
+
+Its role is to discover, compare, correct, and recursively reduce relational structure without requiring the final semantic label in advance.
+
+OneLogic then governs what can be inferred from the grounded structure.
+
+Thus:
+
+```text
+ULT-style grounding: how reality becomes relationally representable
+Stone: what materially relevant reality must retain governing force
+OneLogic: what judgment, inquiry, and response that reality warrants.
+```
+
+These are interfaces of one larger reality-grounded architecture, not competing truth authorities.
+
+---
+
+## 25. Absorbing the useful logic of IEL
+
+IEL is retained as a discovery history, not as a second live calculus.
+
+Its useful cases reduce into the OneLogic core:
+
+```text
+causal-information graph        -> G_t
+provenance/dependence           -> grounded ancestry
+source weighting                -> >=_t
+epistemic continuity            -> persistence of undefeated evidence
+provisional uptake              -> P_t
+mature suspension               -> unresolved residue after proportionate inquiry
+clarification                   -> inquiry/correction operation
+adverse interpretation          -> bridge + model deviation
+manufactured position           -> E+
+caricature                      -> E-/E+ and possibly D_M
+correction refusal              -> D_C
+precaution                      -> response frontier under unresolved belief
+strategic observability         -> live latent-policy completions
+recursive belief                -> material closure depth
+tragic choice                   -> nondominated response with residue
+institutional policy            -> represented causal/policy structure
+anti-self-sealing               -> legal model failure and expansion.
+```
+
+The earlier non-identities remain useful as historical observations, but OneLogic no longer needs them as a list of primitive rules. Their logical content is generated by bridge validity, state deviation, material loss, provenance, and correction.
+
+---
+
+## 26. Falsification
+
+The architecture requires revision if any of the following is demonstrated:
+
+1. a categorical conclusion is warranted despite a materially adequate live counterexample;
+2. the strict bridge condition can be violated while the bridge remains categorically valid;
+3. a material distinction can be erased by `h` while its variation still changes mature judgment and `D_M` nevertheless remains empty;
+4. a necessary maturity-relevant relation exists outside the current Stone-derived closure;
+5. dependent retransmission creates independent ancestry without any new observation, authentication, measurement, or transformation;
+6. a materially available warranted correction may be ignored indefinitely while the dependent judgment remains exact;
+7. a recursively distorted opponent model can remain exact despite repeated actual corrections that defeat it;
+8. a dominated inquiry or response is objectively superior without any offsetting material difference omitted by the model;
+9. model failure can be repaired by contraction alone after actuality has left the model class;
+10. a named phenomenon requires a genuinely new primitive that cannot be represented by the current relational core.
+
+The tenth condition is especially important. If a future phenomenon cannot be generated from actual history, grounding, material closure, live completion, support, bridge validity, deviation, inquiry/action, and correction, OneLogic must expand rather than force the case into inadequate vocabulary.
+
+---
+
+## 27. Status
+
+The strict OneLogic core has executable finite semantics and bounded falsification tests. The mature-judgment layer now has executable instances of provisional judgment, material representation preservation, bridge deviation, explicit measured bridge defect under supplied weights, correction debt, provenance, inquiry dominance, and response dominance.
+
+The general mature theorems remain theorem obligations until formally proved at the corresponding level.
+
+`Ground(H_t)` is deliberately an interface rather than a declaration that unrestricted perception, semantics, or AGI has been solved. The ULT empathy reality-contact result is a bounded operational example of grounding one Stone-relevant structure.
+
+The compact target is:
+
+> Ground what reality has actually done. Preserve every distinction that can still change mature judgment. Infer every conclusion reality warrants and no stronger one. Measure relational deviation where a justified measure exists. Seek discriminating reality when it can improve the judgment. Act on consequence without laundering uncertainty into fact. When reality changes, let the entire dependent structure change with it.
