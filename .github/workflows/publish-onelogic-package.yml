@@ -1,0 +1,224 @@
+name: Publish OneLogic package
+
+on:
+  push:
+    paths:
+      - '.github/workflows/publish-onelogic-package.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Add reductio derivation to canonical sources
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          tex_section = r'''
+          \section{Reductio ad absurdum as admissible-model elimination}
+          Reductio requires no new primitive operator in OneLogic. Let $P$ be a proposition or query value under test and restrict the live state to the completions in which it holds:
+          \[
+          K_t[P]=\{m\in K_t(r):m\models P\}.
+          \]
+          If every completion satisfying $P$ is eliminated by grounded reality, materially required structure, or a warranted consequence of $P$, then
+          \[
+          K_t[P]=\varnothing.
+          \]
+          In that case $P$ is defeated relative to the current adequate representation.
+
+          A common special case is
+          \[
+          P\Rightarrow Q,
+          \qquad
+          K_t(r)\models \neg Q.
+          \]
+          If the bridge from $P$ to $Q$ is itself warranted, then no live completion can satisfy $P$, so
+          \[
+          K_t[P]=\varnothing.
+          \]
+
+          The reverse proof-by-contradiction form,
+          \[
+          \neg P\Rightarrow\bot\Rightarrow P,
+          \]
+          requires an exhaustive query partition. If every live completion defines exactly one of $P$ or $\neg P$, then
+          \[
+          K_t[\neg P]=\varnothing
+          \]
+          leaves only $P$-completions, and ordinary categorical consequence yields
+          \[
+          K_t(r)\models P.
+          \]
+          If the representation permits undefinedness, a third value, or another live alternative, eliminating $\neg P$ does not by itself establish $P$.
+
+          The contradiction must arise from warranted relations. A consequence is not a reductio merely because it sounds extreme, implausible, offensive, or rhetorically absurd. If the contradiction appears only after unsupported insertion $E^+$, unsupported exclusion $E^-$, a defective bridge $D_B$, or material representation loss $D_M$, then the reductio has not defeated the original position. It has defeated a deviated representation.
+
+          Thus the valid form is
+          \[
+          \text{assumption}\to
+          \text{warranted consequences}\to
+          \text{genuine incompatibility}\to
+          \text{elimination of the assumption},
+          \]
+          while manufactured absurdity has the form
+          \[
+          \text{representation/inference deviation}\to
+          \text{manufactured incompatibility}.
+          \]
+          '''
+
+          tex = Path('paper/main.tex')
+          s = tex.read_text()
+          if 'Reductio ad absurdum as admissible-model elimination' not in s:
+              s = s.replace('\\section{Falsification}', tex_section + '\n\\section{Falsification}')
+          if 'Manufactured absurdity / bad reductio &' not in s:
+              lines = s.splitlines()
+              out = []
+              for line in lines:
+                  out.append(line)
+                  if line.startswith('Good faith gone wrong &'):
+                      out.append(r'Manufactured absurdity / bad reductio & Apparent contradiction produced only after $E^-$, $E^+$, $D_B$, or $D_M$ rather than by the tested assumption itself. \\')
+              s = '\n'.join(out) + '\n'
+          old = 'if a recursively distorted opponent model remains exact despite repeated actual corrections; if model failure can be repaired by contraction after actuality has left the model class;'
+          new = 'if a recursively distorted opponent model remains exact despite repeated actual corrections; if a reductio can validly defeat an assumption while a materially adequate live completion satisfying that assumption remains; if eliminating $\\neg P$ establishes $P$ despite a live undefined or third alternative; if model failure can be repaired by contraction after actuality has left the model class;'
+          s = s.replace(old, new)
+          tex.write_text(s)
+
+          md_section = r'''
+          ## 26. Reductio ad absurdum as admissible-model elimination
+
+          Reductio requires no new primitive operator in OneLogic.
+
+          For a proposition or query value `P`, restrict the live state to:
+
+          ```text
+          K_t[P] = {m in K_t(r) : m satisfies P}.
+          ```
+
+          If every completion satisfying `P` is eliminated by grounded reality, materially required structure, or a warranted consequence of `P`, then:
+
+          ```text
+          K_t[P] = empty.
+          ```
+
+          `P` is then defeated relative to the current adequate representation.
+
+          A common special case is:
+
+          ```text
+          P -> Q
+          and K_t(r) forces not-Q.
+          ```
+
+          If the bridge from `P` to `Q` is warranted, no live completion can satisfy `P`.
+
+          The reverse proof-by-contradiction form, `not-P -> contradiction -> P`, requires an exhaustive query partition. If undefinedness, a third value, or another live alternative remains, eliminating `not-P` does not by itself establish `P`.
+
+          The contradiction must arise from warranted relations. If the absurd result appears only after unsupported insertion `E+`, unsupported exclusion `E-`, bridge defect `D_B`, or material representation loss `D_M`, the reductio has defeated a deviated representation rather than the original position.
+
+          Thus:
+
+          ```text
+          valid reductio:
+          assumption -> warranted consequences -> genuine incompatibility -> elimination
+
+          manufactured absurdity:
+          representation/inference deviation -> manufactured incompatibility
+          ```
+
+          ---
+          '''
+          md = Path('paper/one_logic.md')
+          m = md.read_text()
+          if '## 26. Reductio ad absurdum as admissible-model elimination' not in m:
+              m = m.replace('## 26. Falsification', md_section + '\n## 27. Falsification')
+              m = m.replace('## 27. Status', '## 28. Status')
+          if '### 21.13 Manufactured absurdity / bad reductio' not in m:
+              insert = r'''
+          ### 21.13 Manufactured absurdity / bad reductio
+
+          An apparent contradiction is produced only after the tested position has been distorted or an unwarranted consequence has been inserted.
+
+          Signature:
+
+          ```text
+          apparent contradiction
+          + E- and/or E+ and/or D_B and/or D_M
+          + contradiction absent from the warranted model of the tested assumption.
+          ```
+
+          '''
+              m = m.replace('\n---\n\n## 22. worked debate pattern: good faith gone wrong'.lower(), '\n---\n\n' + insert + '---\n\n## 22. Worked debate pattern: good faith gone wrong') if False else m
+              marker = '\n---\n\n## 22. Worked debate pattern: good faith gone wrong'
+              m = m.replace(marker, '\n' + insert + '---\n\n## 22. Worked debate pattern: good faith gone wrong')
+          fals_old = '7. a recursively distorted opponent model can remain exact despite repeated actual corrections that defeat it;\n8. a dominated inquiry or response is objectively superior without any offsetting material difference omitted by the model;\n9. model failure can be repaired by contraction alone after actuality has left the model class;\n10. a named phenomenon requires a genuinely new primitive that cannot be represented by the current relational core.'
+          fals_new = '7. a recursively distorted opponent model can remain exact despite repeated actual corrections that defeat it;\n8. a reductio can validly defeat an assumption while a materially adequate live completion satisfying that assumption remains;\n9. eliminating `not-P` can establish `P` despite a live undefined or third alternative;\n10. a dominated inquiry or response is objectively superior without any offsetting material difference omitted by the model;\n11. model failure can be repaired by contraction alone after actuality has left the model class;\n12. a named phenomenon requires a genuinely new primitive that cannot be represented by the current relational core.'
+          m = m.replace(fals_old, fals_new)
+          md.write_text(m)
+
+          th = Path('formal/THEOREMS.md')
+          t = th.read_text()
+          if '## T24. Reductio as live-region elimination' not in t:
+              theorem = r'''
+          ## T24. Reductio as live-region elimination
+
+          For proposition or query value `P`, define the assumption region:
+
+          `K[P] = {m in K : m satisfies P}`.
+
+          If warranted consequence and grounded/material constraints eliminate every member of `K[P]`, then `K[P]` is empty and `P` is defeated relative to the current adequate model class.
+
+          The reverse proof-by-contradiction step from `not-P` being impossible to categorical `P` is valid only when the represented query partition is exhaustive: every live completion defines exactly one of `P` or `not-P`. If an undefined, third, or otherwise distinct live value remains, eliminating `not-P` does not establish `P`.
+
+          A reductio is defective when the contradiction arises only after existing deviation machinery has altered the tested position or consequence chain, including unsupported exclusion `E-`, unsupported retention `E+`, bridge defect `D_B`, or material representation loss `D_M`.
+
+          '''
+              t = t.replace('# Strongest warranted judgment', theorem + '\n# Strongest warranted judgment')
+          th.write_text(t)
+
+          idx = Path('paper/PHENOMENON_INDEX.md')
+          i = idx.read_text()
+          if '| Manufactured absurdity / bad reductio |' not in i:
+              row = '| Manufactured absurdity / bad reductio | apparent contradiction generated only after `E-`, `E+`, `D_B`, or `D_M` | §26 |\n'
+              i = i.replace('| Talking past each other | opponent-model deviation fails to shrink under corrective contact while generating new dependent inference | §20 |\n', '| Talking past each other | opponent-model deviation fails to shrink under corrective contact while generating new dependent inference | §20 |\n' + row)
+          if '- reductio / proof by contradiction: §26' not in i:
+              i = i.replace('- recursive update: §17\n', '- recursive update: §17\n- reductio / proof by contradiction: §26\n')
+          idx.write_text(i)
+
+          Path('paper/releases').mkdir(parents=True, exist_ok=True)
+          Path('paper/releases/OneLogic_First_Principles.tex').write_text(Path('paper/main.tex').read_text())
+          PY
+
+      - name: Install LaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y latexmk texlive-latex-base texlive-latex-recommended texlive-latex-extra zip
+
+      - name: Build PDF and ZIP
+        run: |
+          latexmk -pdf -interaction=nonstopmode -halt-on-error -output-directory=paper/releases paper/releases/OneLogic_First_Principles.tex
+          rm -f paper/releases/*.aux paper/releases/*.fdb_latexmk paper/releases/*.fls paper/releases/*.log paper/releases/*.out
+          cat > paper/releases/README.txt <<'EOF'
+          OneLogic - A First-Principles Reality-Tracking Logic of Mature Judgment
+          Package includes the canonical TeX and compiled PDF with reductio ad absurdum formalized as admissible-model elimination.
+          Generated from the repository source.
+          EOF
+          cd paper/releases
+          rm -f OneLogic_First_Principles_Package.zip
+          zip -9 OneLogic_First_Principles_Package.zip OneLogic_First_Principles.tex OneLogic_First_Principles.pdf README.txt
+
+      - name: Commit canonical updates and release artifacts
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add paper/main.tex paper/one_logic.md paper/PHENOMENON_INDEX.md formal/THEOREMS.md paper/releases/OneLogic_First_Principles.tex paper/releases/OneLogic_First_Principles.pdf paper/releases/OneLogic_First_Principles_Package.zip paper/releases/README.txt
+          if ! git diff --cached --quiet; then
+            git commit -m 'Publish OneLogic paper package with reductio'
+            git push
+          fi
