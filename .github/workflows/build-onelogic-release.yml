@@ -1,0 +1,99 @@
+name: Build OneLogic release artifacts
+
+on:
+  push:
+    branches:
+      - onelogic/artifacts-2026-10-25
+    paths:
+      - '.github/workflows/build-onelogic-release.yml'
+      - 'paper/**'
+
+permissions:
+  contents: write
+
+jobs:
+  build-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Install LaTeX and zip
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y texlive-latex-base texlive-latex-recommended texlive-fonts-recommended zip
+
+      - name: Prepare paper with reductio
+        shell: python
+        run: |
+          from pathlib import Path
+          src = Path('paper/main.tex')
+          text = src.read_text()
+          marker = r'\section{The Philosopher\'s Stone as material closure}'
+          if 'Reductio ad absurdum as derived elimination' not in text:
+              section = r'''
+\section{Reductio ad absurdum as derived elimination}
+Reductio requires no new truth primitive. For a proposition $P$, restrict the materially adequate live completions to
+\[
+K_t[P]=\{m\in K_t(r):P(m)=\mathrm{true}\}.
+\]
+If every completion satisfying $P$ is eliminated by warranted consequence together with grounded constraints, then
+\[
+K_t[P]=\varnothing,
+\]
+and $P$ is defeated relative to the represented referent. Equivalently, a valid reductio has the form
+\[
+P\longrightarrow\text{warranted consequences}\longrightarrow\text{genuine incompatibility with grounded reality}\longrightarrow\neg P.
+\]
+The contradiction must arise from warranted bridges and materially adequate representation. Mere rhetorical absurdity or an undesirable consequence does not constitute contradiction.
+
+For proof by contradiction in the opposite direction, suppose the reasoner assumes $\neg P$ and obtains
+\[
+K_t[\neg P]=\varnothing.
+\]
+Concluding $P$ is licensed automatically only when the relevant query is exhaustive, so every materially adequate live completion lies in exactly one of the $P$ or $\neg P$ regions. If undefined, indeterminate, or third values remain live, elimination of $\neg P$ alone does not establish $P$.
+
+This also exposes manufactured absurdity. If an opponent's actual position $W$ is first transformed into a deviating model $M$ through unsupported exclusion $E^-$, unsupported insertion $E^+$, or material representation loss $D_M$, and the absurd consequence appears only through a defective bridge $D_B$ from $M$, the reductio has not defeated $W$. Formally,
+\[
+W\xrightarrow{E^-,E^+,D_M}M\xrightarrow{D_B}\bot
+\]
+is a deviation trace, not a valid reductio of $W$. A valid reductio therefore requires the assumed position to be materially adequate and each inferential bridge used in reaching the contradiction to have empty defect on the relevant premise region.
+
+'''
+              if marker not in text:
+                  raise SystemExit('Insertion marker not found')
+              text = text.replace(marker, section + marker, 1)
+          out = Path('paper/releases')
+          out.mkdir(parents=True, exist_ok=True)
+          (out / 'OneLogic_First_Principles.tex').write_text(text)
+
+      - name: Compile PDF
+        working-directory: paper/releases
+        run: |
+          pdflatex -interaction=nonstopmode -halt-on-error OneLogic_First_Principles.tex
+          pdflatex -interaction=nonstopmode -halt-on-error OneLogic_First_Principles.tex
+
+      - name: Package
+        working-directory: paper/releases
+        run: |
+          zip -9 OneLogic_First_Principles_Package.zip OneLogic_First_Principles.tex OneLogic_First_Principles.pdf
+
+      - name: Publish GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG='onelogic-first-principles-reductio'
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release upload "$TAG" \
+              paper/releases/OneLogic_First_Principles.tex \
+              paper/releases/OneLogic_First_Principles.pdf \
+              paper/releases/OneLogic_First_Principles_Package.zip \
+              --clobber
+          else
+            gh release create "$TAG" \
+              paper/releases/OneLogic_First_Principles.tex \
+              paper/releases/OneLogic_First_Principles.pdf \
+              paper/releases/OneLogic_First_Principles_Package.zip \
+              --target "$GITHUB_SHA" \
+              --title 'OneLogic First-Principles Paper' \
+              --notes 'First-principles OneLogic paper package, including the reductio ad absurdum derivation and manufactured-absurdity distinction.'
+          fi
